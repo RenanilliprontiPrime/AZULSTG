@@ -17,7 +17,7 @@ Variables      ../resource/credenciais.yaml
 #KEYWORDS
 Resource      ../resource/pages/keywords/azul_resources.robot
 Resource      ../resource/pages/keywords/booking_resource.robot
-Resource      ../resource/pages/keywords/pgto_resource.robot
+#Resource      ../resource/pages/keywords/pgto_resource.robot
 
 
 
