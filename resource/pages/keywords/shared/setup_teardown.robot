@@ -3,13 +3,10 @@ Resource   ../../../../resource/main.robot
 
 *** Keywords ***
 
-
-
 inicia o teste com login 
     [Arguments]        ${USER}=Default
     Open Browser       ${URL_STG}      ${Browser} 
     Maximize Browser Window
-  #  Go To   ${URL_STG}
     Wait Until Element Is Visible     ${BTN_COOKIES}
     Click Element                     ${BTN_COOKIES}
     Wait and click Element            ${login.BTN_LOGIN}
@@ -19,6 +16,6 @@ inicia o teste com login
 inicia teste sem login
     Open Browser    ${Browser} 
     Maximize Browser Window
-    Go To   ${URL_STG}
+    #Go To   ${URL_STG}
     Wait Until Element Is Visible     ${BTN_COOKIES}
     Click Element                     ${BTN_COOKIES}

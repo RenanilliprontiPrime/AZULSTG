@@ -20,7 +20,6 @@ Resource    ../../../resource/main.robot
 ...        VALIDA_VOOS=//h3[@arial-label='Olá Roberto, esse é o resultado de sua busca.']
 ...        SELECIONA_VIAGEM_IDA=(//div[contains(@id,'')])[625]
 ...        BTN_SLC_TRF_IDA=(//button[@data-test-id='select-fare'])[1]
-# ${VALIDA_TARIFA_IDA}              (//h3[@class='css-wh3qsz'][contains(.,'Itinerário')])[1]
 ...        SELECIONA_VIAGEM_VOLTA=(//div[contains(@aria-label,'Ver tarifas deste voo. Selecionar')])[2]
 ...        BTN_SLC_TRF_VOLTA=(//button[@data-test-id="select-fare"])[5]
 ...        BTN_PSG_PGTO=(//button[@data-test-id='no-id'])[6]
