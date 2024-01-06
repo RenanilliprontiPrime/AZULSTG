@@ -2,7 +2,7 @@
 Resource    ../../../resource/main.robot
 
 *** Keywords ***
-&{pgtos}
+#&{pgto}
 
 ...                SLC_MODAL_PGTO=//h3[contains(.,'Selecionar como quer pagar')]
 ...                BTN_CC=//button[contains(.,'Cartão de crédito')]
@@ -17,3 +17,5 @@ Resource    ../../../resource/main.robot
 ...                INSERIR_NM_TITULAR=//span[contains(.,'Nome impresso no cartão')]
 ...                NOME_TITULAR=//input[@aria-label='Nome impresso no cartão']
 ...                BTN_ADD_CARTÃO=//input[@value='Adicionar cartão']
+
+
