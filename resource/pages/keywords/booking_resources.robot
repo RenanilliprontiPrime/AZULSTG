@@ -1,6 +1,8 @@
 *** Settings ***
 Resource   ../../../resource/main.robot
 
+
+
 *** Keywords ***
 
 clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta 
