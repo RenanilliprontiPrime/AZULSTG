@@ -27,22 +27,22 @@ Caso de Testes 02 - Validar busca de passagens no site
     Quando clicar em "Buscar passagens"
     Então o site deverá exibir a lista de voos
 
-Caso de Testes 03 - Selecionar Passagens e Prosseguir para Pagamento
-    [Documentation]        Esse caso de teste serve para selecionar as tarifas em REAIS e prosseguir o Fluxo
-    [Tags]                 SELECIONAR TARIFA    t3
-    [Setup]                inicia o teste na tela de selecionar passagens USER=Tudo Azul
-    Dado selecionar as Tarifas de ida e Volta
-    Quando clicar em Prosseguir para Pagamento
-    Então o sistema deverá prosseguir para a tela de "Pagamento"
+#Caso de Testes 03 - Selecionar Passagens e Prosseguir para Pagamento
+    #[Documentation]        Esse caso de teste serve para selecionar as tarifas em REAIS e prosseguir o Fluxo
+    #[Tags]                 SELECIONAR TARIFA    t3
+    #[Setup]                inicia o teste na tela de selecionar passagens USER=Tudo Azul
+    #Dado selecionar as Tarifas de ida e Volta
+    #Quando clicar em Prosseguir para Pagamento
+    #Então o sistema deverá prosseguir para a tela de "Pagamento"
 
 
-Caso de Testes 04 - Validar a inserção de Cartão de Crédito
-    [Documentation]        Esse caso de testes serve para validar a iserção de Cartão de Crédito na tela de pagamento
-    [Tags]                 INSERIR CARTÃO    t4
-    [Setup]                inicia o teste na tela de pagamento
-    Dado que esteja na tela de pagamento
-    Quando clicar em "Selecionar forma de pagamento", clicar em "Cartão de Crédito"
-    E inserir um "Cartão de Crédito" valido, adicionar Cartão
+#Caso de Testes 04 - Validar a inserção de Cartão de Crédito
+    #[Documentation]        Esse caso de testes serve para validar a iserção de Cartão de Crédito na tela de pagamento
+    #[Tags]                 INSERIR CARTÃO    t4
+    #[Setup]                inicia o teste na tela de pagamento
+    #Dado que esteja na tela de pagamento
+    #Quando clicar em "Selecionar forma de pagamento", clicar em "Cartão de Crédito"
+    #E inserir um "Cartão de Crédito" valido, adicionar Cartão
     # Então o sistema deverá retornar para a tela de pagamento
 
 

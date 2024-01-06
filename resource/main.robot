@@ -11,13 +11,15 @@ Resource      ../resource/pages/elements/pgto_elements.robot
 
 #variaveis
 Variables      ../resource/credenciais.yaml
+Variables      ../resource/pgto.yaml
+
 
 
 
 #KEYWORDS
 Resource      ../resource/pages/keywords/azul_resources.robot
-Resource      ../resource/pages/keywords/booking_resource.robot
-#Resource      ../resource/pages/keywords/pgto_resource.robot
+Resource      ../resource/pages/keywords/booking_resources.robot
+Resource      ../resource/pages/keywords/pgto_resources.robot
 
 
 

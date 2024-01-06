@@ -2,7 +2,7 @@
 Resource    ../../../resource/main.robot
 
 *** Keywords ***
-#&{pgto}
+&{pgto}
 
 ...                SLC_MODAL_PGTO=//h3[contains(.,'Selecionar como quer pagar')]
 ...                BTN_CC=//button[contains(.,'Cartão de crédito')]
