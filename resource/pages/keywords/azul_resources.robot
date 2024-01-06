@@ -51,15 +51,15 @@ inserir os dados de Login, clicar em "Entrar no TudoAzul"
 
     Input Text       ${login.CAMPO_SENHA}    Azul2023**
 
-    Wait Until Element Is Visible     ${BTN_ENTRAR_TUDO_AZUL}
+    Wait Until Element Is Visible     ${login.BTN_ENTRAR_TUDO_AZUL}
 
-    Click Button     ${BTN_ENTRAR_TUDO_AZUL}
+    Click Button     ${login.BTN_ENTRAR_TUDO_AZUL}
 
 Então o sistema devera apresentar a pagina do Site logado
     Wait Until Page Does Not Contain    Estamos carregando suas informações
-    Wait Until Element Is Visible     ${VALIDA_LOGIN}    timeout=45
+    Wait Until Element Is Visible     ${login.VALIDA_LOGIN}    45
 
 
 Dado que estou logado no site da Azul
     Wait Until Page Does Not Contain    Estamos carregando suas informações
-    Wait Until Element Is Visible     ${VALIDA_LOGIN}    timeout=45
+    Wait Until Element Is Visible     ${login.VALIDA_LOGIN}    45
