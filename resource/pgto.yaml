@@ -1,12 +1,12 @@
-Numero cartão: 5555 4444 3333 1111
+Numero_cartão: "5555444433331111"
 
-Validade: 03/30
+Validade: "03/30"
 
-CVV: 737
+CVV: "737"
 
-Numero CPF: 18124874360
+Numero_CPF: "18124874360"
 
-Nome: Roberto	Teste
+Nome: "Roberto Teste"
 
 
 

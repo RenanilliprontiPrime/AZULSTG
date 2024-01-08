@@ -18,7 +18,7 @@ Resource    ../../../resource/main.robot
 ...        BTN_SELECIONA_DATA=//div[@class='button__text'][contains(.,'Selecionar data de ida e volta')]
 ...        BTN_BUSCAR_PASSAGENS=//div[@class='button__text'][contains(.,'Buscar passagens')]
 ...        VALIDA_VOOS=//h3[@arial-label='Olá Roberto, esse é o resultado de sua busca.']
-...        SELECIONA_VIAGEM_IDA=(//div[contains(@class,'flight-card__fare right-container')])[1]
+...        SLC_VIAGEM_IDA=(//div[contains(@class,'flight-card__fare right-container')])[1]
 ...        BTN_SLC_TRF_IDA=(//button[@data-test-id='select-fare'])[1]
 ...        SELECIONA_VIAGEM_VOLTA=(//div[@aria-label='Ver tarifas deste voo. Selecionar'])[3]
 ...        BTN_SLC_TRF_VOLTA=(//button[@class='button css-1jveutg'])[2]

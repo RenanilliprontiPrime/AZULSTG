@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../../../resource/main.robot
 
-*** Keywords ***
+*** Variables ***
 &{pgto}
 
 ...                SLC_MODAL_PGTO=//h3[contains(.,'Selecionar como quer pagar')]
