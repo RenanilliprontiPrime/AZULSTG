@@ -7,15 +7,17 @@ Resource   ../../../resource/main.robot
 
 
 clicar em "Selecionar forma de pagamento", clicar em "Cartão de Crédito"
+    ${pgto}    Set Variable    value
     Wait Until Element Is Visible                                   ${pgto.VLD_TELA_PGTO}    30
     Set Selenium Page Load Timeout                                                           20
-    Wait Until Keyword Succeeds      3    40s    Click Element     ${pgto.SLC_FORMA_PGTO}
+    Wait Until Keyword Succeeds      3    40s    Click Element      ${pgto.SLC_FORMA_PGTO}
     Click Element                                                   ${pgto.SLC_FORMA_PGTO}
     Wait Until Element Is Visible                                   ${pgto.SLC_MODAL_PGTO}
     Click Element                                                   ${pgto.BTN_CC}
 
 
 E inserir um "Cartão de Crédito" valido, adicionar Cartão
+    ${pgto}    Set Variable    value
     Click Element                                                    ${pgto.INSERIR_CARTÃO}
     Input Text                                                       ${pgto.NMR_CARTÃO}            ${Numero_cartão}
     Click Element                                                    ${pgto.INSERIR_VALIDADE}

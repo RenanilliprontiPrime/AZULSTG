@@ -35,7 +35,7 @@ clicar em "Buscar passagens"
 o site deverá exibir a lista de voos
     Wait Until Page Does Not Contain          Estamos esquentando as turbinas    10
     Wait Until Element Is Visible             ${booking.SLC_VIAGEM_IDA}          10
-    
+    Capture Page Screenshot
 
 selecionar as Tarifas de ida e Volta
     Wait and Click Element                    ${booking.SLC_VIAGEM_IDA}          10
