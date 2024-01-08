@@ -85,3 +85,46 @@ o sistema deverá prosseguir para a tela de "Viajantes"
     Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}
 
 
+que inicio na tela de pagamento
+    # que estou no site da Azul
+    # clicar em Fazer Login
+    # inserir os dados de Login, clicar em "Entrar no TudoAzul"
+    # Então o sistema devera apresentar a pagina do Site logado
+    # clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
+    # clicar em "Buscar passagens"
+    # o site deverá exibir a lista de voos
+    que seleciono as Tarifas de ida e Volta
+    clicar em Prosseguir para Pagamento
+    o sistema deverá prosseguir para a tela de "Viajantes"
+
+selecionar forma de pagamento, clicar em "Cartão de Crédito"
+    Wait and Click Element                                          ${booking.BTN_PSG_PGTO}      10
+    Wait Until Element Is Visible                                   ${booking.VLD_TELA_PGTO}     30
+    Set Selenium Page Load Timeout                                                               20
+    Wait Until Keyword Succeeds      3    40s    Click Element      ${booking.SLC_FORMA_PGTO}
+    Click Element                                                   ${booking.SLC_FORMA_PGTO}
+    Wait Until Element Is Visible                                   ${booking.SLC_MODAL_PGTO}
+    Click Element                                                   ${booking..BTN_CC}
+
+
+inserir um "Cartão de Crédito" valido, adicionar Cartão
+    Wait and Click Element                                          ${booking.INSERIR_CC}
+    Wait and Input Text                                             ${booking.NMR_CC}                ${Numero_cartão}
+    Wait and Click Element                                          ${booking.INSERIR_VLD}
+    Wait and Input Text                                             ${booking.NMR_VLD}               ${Validade}
+    Wait and Click Element                                          ${booking.INSERIR_CVV}
+    Wait and Input Text                                             ${booking.NMR_CVV}               ${CVV}
+    Wait and Click Element                                          ${booking.INSERIR_CPF}
+    Wait and Input Text                                             ${booking.NMR_CPF}               ${Numero_CPF}
+    Wait and Click Element                                          ${booking.INSERIR_NOME} 
+    Wait and Input Text                                             ${booking.NOME}                  ${Nome}
+    Wait and Click Element                                          ${booking.BTN_ADD_CC}
+
+
+
+
+o sistema deverá retornar para a tela de pagamento
+    Wait Until Element Is Visible                                    ${booking.VLD_TELA_PGTO}
+
+
+

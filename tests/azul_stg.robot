@@ -38,14 +38,14 @@ Caso de Testes 03 - Selecionar Passagens e Prosseguir para Viajantes
     Então o sistema deverá prosseguir para a tela de "Viajantes"
 
 
-#Caso de Testes 04 - Validar a inserção de Cartão de Crédito
-    #[Documentation]        Esse caso de testes serve para validar a iserção de Cartão de Crédito na tela de pagamento
-    #[Tags]                 INSERIR CARTÃO    t4
-    #[Setup]                inicia o teste na tela de pagamento
-    #Dado que inicio na tela de pagamento
-    #Quando clicar em "Selecionar forma de pagamento", clicar em "Cartão de Crédito"
-    #E inserir um "Cartão de Crédito" valido, adicionar Cartão
-    # Então o sistema deverá retornar para a tela de pagamento
+Caso de Testes 04 - Validar a inserção de Cartão de Crédito
+    [Documentation]        Esse caso de testes serve para validar a inserção de Cartão de Crédito na tela de pagamento
+    [Tags]                 INSERIR CARTÃO    t4
+    [Setup]                inicia o teste com login  USER=Tudo Azul
+    Dado que inicio na tela de pagamento
+    Quando selecionar forma de pagamento, clicar em "Cartão de Crédito"
+    E inserir um "Cartão de Crédito" valido, adicionar Cartão
+    Então o sistema deverá retornar para a tela de pagamento
 
 
 # Caso de testes 05 - Efetuar Pagamento da Tarifa
