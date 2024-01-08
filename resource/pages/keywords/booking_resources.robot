@@ -6,8 +6,8 @@ Resource   ../../../resource/main.robot
 *** Keywords ***
 
 clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta 
-    Wait Until Page Does Not Contain Element        ${login.BTN_LOGIN}     40
-    Wait Until Page Contains                  Estamos carregando suas informações    10
+    Wait Until Page Does Not Contain Element        ${login.BTN_LOGIN}               40
+    Wait Until Page Contains                  Estamos carregando suas informações    20
     ${booking.BOOL_BUSCA_VOOS}        Run Keyword And Return Status    Wait Until Element Is Visible     ${booking.VLD_SELECAODEVOOS}  
     IF        ${booking.BOOL_BUSCA_VOOS} == False
         Click Element        ${booking.BTN_COMPRAR}    
@@ -34,11 +34,12 @@ clicar em "Buscar passagens"
 
 o site deverá exibir a lista de voos
     Wait Until Page Does Not Contain          Estamos esquentando as turbinas    10
-    Wait Until Element Is Visible             ${booking.SLC_VIAGEM_IDA}    20
+    Wait Until Element Is Visible             ${booking.SLC_VIAGEM_IDA}          10
     
 
 selecionar as Tarifas de ida e Volta
-    Wait and Click Element                    ${booking.SLC_VIAGEM_IDA}    20
+    Wait and Click Element                    ${booking.SLC_VIAGEM_IDA}          10
+    Capture Page Screenshot
     
     WHILE  True
         ${status}  Run keyword and return status   Click Element   ${booking.BTN_SLC_TRF_IDA}
@@ -64,14 +65,14 @@ selecionar as Tarifas de ida e Volta
 
 e clicar em Prosseguir para Pagamento
     Wait and Click Element                     ${booking.BTN_PSG_PGTO}
-    Wait Until Page Does Not Contain           Carregando informações    40
+    Wait Until Page Does Not Contain           Carregando informações    20
     Wait Until Element Is Visible              ${booking.MODAL_PGTO}
     Click Element                              ${booking.BTN_MODAL_PGTO}
 
 
 o sistema deverá prosseguir para a tela de "Pagamento"
-    Wait Until Page Does Not Contain           Carregando informações    40
+    Wait Until Page Does Not Contain           Carregando informações    20
     Wait Until Element Is Visible              ${booking.MODAL_1_CLIQUE}
     Click Element                              ${booking.MODAL_BTN_PGTO_1_CLIQUE}
-    Wait Until Page Does Not Contain           Carregando informações    40
+    Wait Until Page Does Not Contain           Carregando informações    20
     Wait Until Element Is Visible              ${booking.VLD_TELA_PGTO}  30
