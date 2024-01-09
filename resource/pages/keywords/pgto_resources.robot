@@ -7,7 +7,7 @@ Resource   ../../../resource/main.robot
 
 
 clicar em "Selecionar forma de pagamento", clicar em "Cartão de Crédito"
-    Wait Until Element Is Visible                                   ${booking..VLD_TELA_PGTO}    30
+    Wait Until Element Is Visible                                   ${booking.VLD_TELA_PGTO}    30
     Set Selenium Page Load Timeout                                                           20
     Wait Until Keyword Succeeds      3    40s    Click Element      ${booking.SLC_FORMA_PGTO}
     Click Element                                                   ${booking.SLC_FORMA_PGTO}

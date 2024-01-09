@@ -85,7 +85,7 @@ o sistema deverá prosseguir para a tela de "Viajantes"
     Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}
 
 
-que inicio na tela de pagamento
+que inicio na tela de Viajantes
     # que estou no site da Azul
     # clicar em Fazer Login
     # inserir os dados de Login, clicar em "Entrar no TudoAzul"
@@ -104,7 +104,7 @@ selecionar forma de pagamento, clicar em "Cartão de Crédito"
     Wait Until Keyword Succeeds      3    40s    Click Element      ${booking.SLC_FORMA_PGTO}
     Click Element                                                   ${booking.SLC_FORMA_PGTO}
     Wait Until Element Is Visible                                   ${booking.SLC_MODAL_PGTO}
-    Click Element                                                   ${booking..BTN_CC}
+    Click Element                                                   ${booking.BTN_CC}
 
 
 inserir um "Cartão de Crédito" valido, adicionar Cartão

@@ -42,7 +42,7 @@ Caso de Testes 04 - Validar a inserção de Cartão de Crédito
     [Documentation]        Esse caso de testes serve para validar a inserção de Cartão de Crédito na tela de pagamento
     [Tags]                 INSERIR CARTÃO    t4
     [Setup]                inicia o teste com login  USER=Tudo Azul
-    Dado que inicio na tela de pagamento
+    Dado que inicio na tela de viajantes
     Quando selecionar forma de pagamento, clicar em "Cartão de Crédito"
     E inserir um "Cartão de Crédito" valido, adicionar Cartão
     Então o sistema deverá retornar para a tela de pagamento
