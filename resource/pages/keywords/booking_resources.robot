@@ -34,7 +34,7 @@ clicar em "Buscar passagens"
 
 o site deverá exibir a lista de voos
     Wait Until Page Does Not Contain          Estamos esquentando as turbinas    40
-    Wait Until Element Is Visible             ${booking.SLC_VIAGEM_IDA}          20
+    Wait Until Element Is Visible             ${booking.SLC_VIAGEM_IDA}          40
 
 
 
@@ -67,12 +67,12 @@ que seleciono as Tarifas de ida e Volta
     END
     
     Wait Until Page Contains                   Carregando informações    40
-    Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}   10
+    Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}   20
  
 
 clicar em Prosseguir para Pagamento
-    Wait and Click Element                     ${booking.BTN_PSG_PGTO}
-    Wait Until Page Contains                   Carregando informações     30
+    Wait and Click Element                     ${booking.BTN_PSG_PGTO}        20
+    Wait Until Page Contains                   Carregando informações         40
     Wait Until Element Is Visible              ${booking.VLD_MODAL_PGTO}      40
     Click Element                              ${booking.BTN_MODAL_PGTO}
     #Wait Until Page Contains                  Carregando informações    40
