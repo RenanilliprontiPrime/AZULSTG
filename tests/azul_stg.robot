@@ -40,7 +40,7 @@ Caso de Testes 03 - Validar a inserção de Cartão de Crédito
 
 Caso de testes 04 - Efetuar Pagamento da Tarifa
     [Documentation]        Esse caso de teste serve para fazer a finalização do pagamento
-    [Tags]                 FINALIZAR Pagamento    t4
+    [Tags]                 FINALIZAR PAGAMENTO    t4
     [Setup]                inicia o teste com login  USER=Tudo Azul
     Dado que inicio na tela de pagamento
     Quando selecionar a forma de parcelamento

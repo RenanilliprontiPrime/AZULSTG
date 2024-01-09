@@ -72,16 +72,16 @@ que seleciono as Tarifas de ida e Volta
 
 clicar em Prosseguir para Pagamento
     Wait and Click Element                     ${booking.BTN_PSG_PGTO}
-    Wait Until Page Contains                   Carregando informações     40
+    Wait Until Page Contains                   Carregando informações     30
     Wait Until Element Is Visible              ${booking.MODAL_PGTO}      40
     Click Element                              ${booking.BTN_MODAL_PGTO}
-    Wait Until Page Contains                   Carregando informações     40
+    #Wait Until Page Contains                  Carregando informações    40
     Wait Until Element Is Visible              ${booking.MODAL_1_CLIQUE}  20  
     Click Element                              ${booking.MODAL_BTN_PGTO_1CLIQUE}
 
 
 o sistema deverá prosseguir para a tela de Viajantes
-    #Wait Until Page Contains                   Carregando informações      20
+    # Set Selenium Page Load Timeout                                        20
     Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}   
 
 
@@ -93,40 +93,34 @@ que inicio na tela de Viajantes
     clicar em Prosseguir para Pagamento
     o sistema deverá prosseguir para a tela de Viajantes
 
+
 selecionar forma de pagamento, clicar em "Cartão de Crédito"
-    Wait and Click Element                                          ${booking.BTN_PSG_PGTO}      10
-    Wait Until Element Is Visible                                   ${booking.VLD_TELA_PGTO}     30
-    Set Selenium Page Load Timeout                                                               20
+    Wait and Click Element                      ${booking.BTN_PSG_PGTO}      30
+    Wait Until Element Is Visible               ${booking.VLD_TELA_PGTO}     30
+    Set Selenium Page Load Timeout                                           20
     Wait Until Keyword Succeeds      3    20s    Click Element      ${booking.SLC_PGTO}
-    # Click Element                                                   ${booking.SLC_FORMA_PGTO}
-    #Wait Until Element Is Visible                                   ${booking.SLC_PGTO}
-    Click Element                                                   ${booking.SLC_CC}
+    # Click Element                                                 ${booking.SLC_FORMA_PGTO}
+    #Wait Until Element Is Visible                                  ${booking.SLC_PGTO}
+    Click Element                               ${booking.SLC_CC}
 
 
 inserir um "Cartão de Crédito" valido, adicionar Cartão
-    Wait and Click Element                                          ${booking.INSERIR_CC}
-    Wait and Input Text                                             ${booking.NMR_CC}                ${Numero_cartão}
-    Wait and Click Element                                          ${booking.INSERIR_VLD}
-    Wait and Input Text                                             ${booking.NMR_VLD}               ${Validade}
-    Wait and Click Element                                          ${booking.INSERIR_CVV}
-    Wait and Input Text                                             ${booking.NMR_CVV}               ${CVV}
-    Wait and Click Element                                          ${booking.INSERIR_CPF}
-    Wait and Input Text                                             ${booking.NMR_CPF}               ${Numero_CPF}
-    Wait and Click Element                                          ${booking.INSERIR_NOME} 
-    Wait and Input Text                                             ${booking.NOME}                  ${Nome}
-    Wait and Click Element                                          ${booking.BTN_ADD_CC}
-
-
+    Wait and Click Element                      ${booking.INSERIR_CC}
+    Wait and Input Text                         ${booking.NMR_CC}                ${Numero_cartão}
+    Wait and Click Element                      ${booking.INSERIR_VLD}
+    Wait and Input Text                         ${booking.NMR_VLD}               ${Validade}
+    Wait and Click Element                      ${booking.INSERIR_CVV}
+    Wait and Input Text                         ${booking.NMR_CVV}               ${CVV}
+    Wait and Click Element                      ${booking.INSERIR_CPF}
+    Wait and Input Text                         ${booking.NMR_CPF}               ${Numero_CPF}
+    Wait and Click Element                      ${booking.INSERIR_NOME} 
+    Wait and Input Text                         ${booking.NOME}                  ${Nome}
+    Wait and Click Element                      ${booking.BTN_ADD_CC}
 
 
 o sistema deverá retornar para a tela de pagamento
-    Wait Until Element Is Visible                                    ${booking.VLD_TELA_PGTO}    30
-    Wait and Click Element                                           ${booking.SLC_MASCARA_CC}   30
-    
-
-
-
-
+    Wait Until Element Is Visible               ${booking.VLD_TELA_PGTO}    30
+    Wait and Click Element                      ${booking.SLC_MASCARA_CC}   30
 
 
 que inicio na tela de pagamento
@@ -142,11 +136,10 @@ que inicio na tela de pagamento
     o sistema deverá retornar para a tela de pagamento
 
 
-
 selecionar a forma de parcelamento
-    Wait Until Element Is Visible                                    ${booking.VLD_TELA_PGTO}    30
-    Wait and Click Element                                           ${booking.SLC_PARC}
-    Wait and Click Element                                           ${booking.SLC_PARC_1X}
+    Wait Until Element Is Visible                ${booking.VLD_TELA_PGTO}    30
+    Wait and Click Element                       ${booking.SLC_PARC}
+    Wait and Click Element                       ${booking.SLC_PARC_1X}
     Capture Page Screenshot
 
 
