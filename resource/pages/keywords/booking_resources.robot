@@ -66,23 +66,23 @@ que seleciono as Tarifas de ida e Volta
         Press Keys  ${None}  ARROW_UP  
     END
     
-    Wait Until Page Contains                   Carregando informações    30
+    Wait Until Page Contains                   Carregando informações    40
     Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}   10
  
 
 clicar em Prosseguir para Pagamento
     Wait and Click Element                     ${booking.BTN_PSG_PGTO}
-    Wait Until Page Contains                   Carregando informações    40
-    Wait Until Element Is Visible              ${booking.MODAL_PGTO}     40
+    Wait Until Page Contains                   Carregando informações     40
+    Wait Until Element Is Visible              ${booking.MODAL_PGTO}      40
     Click Element                              ${booking.BTN_MODAL_PGTO}
-    Wait Until Page Contains                   Carregando informações       40
-    Wait Until Element Is Visible              ${booking.MODAL_1_CLIQUE}    50
+    Wait Until Page Contains                   Carregando informações     40
+    Wait Until Element Is Visible              ${booking.MODAL_1_CLIQUE}  20  
     Click Element                              ${booking.MODAL_BTN_PGTO_1CLIQUE}
 
 
 o sistema deverá prosseguir para a tela de Viajantes
-    # Wait Until Page Does Not Contain           Carregando informações     20
-    Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}    20
+    #Wait Until Page Contains                   Carregando informações      20
+    Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}   
 
 
 que inicio na tela de Viajantes
