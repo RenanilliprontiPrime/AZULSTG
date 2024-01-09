@@ -33,8 +33,8 @@ clicar em "Buscar passagens"
 
 
 o site deverá exibir a lista de voos
-    Wait Until Page Does Not Contain          Estamos esquentando as turbinas    10
-    Wait Until Element Is Visible             ${booking.SLC_VIAGEM_IDA}          10
+    Wait Until Page Does Not Contain          Estamos esquentando as turbinas    40
+    Wait Until Element Is Visible             ${booking.SLC_VIAGEM_IDA}          20
 
 
 
@@ -67,44 +67,40 @@ que seleciono as Tarifas de ida e Volta
     END
     
     Wait Until Page Contains                   Carregando informações    30
-    Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}
-    Capture Page Screenshot
+    Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}   10
+ 
 
 clicar em Prosseguir para Pagamento
     Wait and Click Element                     ${booking.BTN_PSG_PGTO}
     Wait Until Page Contains                   Carregando informações    40
     Wait Until Element Is Visible              ${booking.MODAL_PGTO}     40
     Click Element                              ${booking.BTN_MODAL_PGTO}
-
-
-o sistema deverá prosseguir para a tela de "Viajantes"
-    Wait Until Page Contains                   Carregando informações    30
-    Wait Until Element Is Visible              ${booking.MODAL_1_CLIQUE}    20
+    Wait Until Page Contains                   Carregando informações       40
+    Wait Until Element Is Visible              ${booking.MODAL_1_CLIQUE}    50
     Click Element                              ${booking.MODAL_BTN_PGTO_1CLIQUE}
-    Wait Until Page Does Not Contain           Carregando informações    20
-    Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}
+
+
+o sistema deverá prosseguir para a tela de Viajantes
+    # Wait Until Page Does Not Contain           Carregando informações     20
+    Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}    20
 
 
 que inicio na tela de Viajantes
-    # que estou no site da Azul
-    # clicar em Fazer Login
-    # inserir os dados de Login, clicar em "Entrar no TudoAzul"
-    # Então o sistema devera apresentar a pagina do Site logado
-    # clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
-    # clicar em "Buscar passagens"
-    # o site deverá exibir a lista de voos
+    clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
+    clicar em "Buscar passagens"
+    o site deverá exibir a lista de voos
     que seleciono as Tarifas de ida e Volta
     clicar em Prosseguir para Pagamento
-    o sistema deverá prosseguir para a tela de "Viajantes"
+    o sistema deverá prosseguir para a tela de Viajantes
 
 selecionar forma de pagamento, clicar em "Cartão de Crédito"
     Wait and Click Element                                          ${booking.BTN_PSG_PGTO}      10
     Wait Until Element Is Visible                                   ${booking.VLD_TELA_PGTO}     30
     Set Selenium Page Load Timeout                                                               20
-    Wait Until Keyword Succeeds      3    40s    Click Element      ${booking.SLC_FORMA_PGTO}
-    Click Element                                                   ${booking.SLC_FORMA_PGTO}
-    Wait Until Element Is Visible                                   ${booking.SLC_MODAL_PGTO}
-    Click Element                                                   ${booking.BTN_CC}
+    Wait Until Keyword Succeeds      3    20s    Click Element      ${booking.SLC_PGTO}
+    # Click Element                                                   ${booking.SLC_FORMA_PGTO}
+    #Wait Until Element Is Visible                                   ${booking.SLC_PGTO}
+    Click Element                                                   ${booking.SLC_CC}
 
 
 inserir um "Cartão de Crédito" valido, adicionar Cartão
@@ -124,7 +120,48 @@ inserir um "Cartão de Crédito" valido, adicionar Cartão
 
 
 o sistema deverá retornar para a tela de pagamento
-    Wait Until Element Is Visible                                    ${booking.VLD_TELA_PGTO}
+    Wait Until Element Is Visible                                    ${booking.VLD_TELA_PGTO}    30
+    Wait and Click Element                                           ${booking.SLC_MASCARA_CC}   30
+    
+
+
+
+
+
+
+que inicio na tela de pagamento
+    clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
+    clicar em "Buscar passagens"
+    o site deverá exibir a lista de voos
+    que seleciono as Tarifas de ida e Volta
+    clicar em Prosseguir para Pagamento
+    o sistema deverá prosseguir para a tela de Viajantes
+    que inicio na tela de viajantes
+    selecionar forma de pagamento, clicar em "Cartão de Crédito"
+    inserir um "Cartão de Crédito" valido, adicionar Cartão
+    o sistema deverá retornar para a tela de pagamento
+
+
+
+selecionar a forma de parcelamento
+    Wait Until Element Is Visible                                    ${booking.VLD_TELA_PGTO}    30
+    Wait and Click Element                                           ${booking.SLC_PARC}
+    Wait and Click Element                                           ${booking.SLC_PARC_1X}
+    Capture Page Screenshot
+
+
+# selecionar o checkbox dos termos de contrato
+
+
+
+
+
+# clicar em "Efetuar Pagamento"
+
+
+
+
+# o sistema deverá finalizar o pagamento e apresentar a tela de sucesso
 
 
 

@@ -8,7 +8,7 @@ Library         yaml
 Resource      ../resource/pages/elements/login_elements.robot
 Resource      ../resource/pages/elements/base_elements.robot
 Resource      ../resource/pages/elements/booking_elements.robot
-Resource      ../resource/pages/elements/pgto_elements.robot
+
 
 #variaveis
 
@@ -20,9 +20,8 @@ Variables      ../resource/pgto.yaml
 
 #KEYWORDS
 
-Resource      ../resource/pages/keywords/azul_resources.robot
 Resource      ../resource/pages/keywords/booking_resources.robot
-Resource      ../resource/pages/keywords/pgto_resources.robot
+
 
 
 
