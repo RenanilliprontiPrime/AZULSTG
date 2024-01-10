@@ -44,6 +44,6 @@ Caso de testes 04 - Efetuar Pagamento da Tarifa
     [Setup]                inicia o teste com login  USER=Tudo Azul
     Dado que inicio na tela de pagamento
     Quando selecionar a forma de parcelamento
-    # E selecionar o checkbox dos termos de contrato
-    # E clicar em "Efetuar Pagamento"
+    E selecionar o checkbox dos termos de contrato
+    E clicar em "Efetuar Pagamento"
     # Então o sistema deverá finalizar o pagamento e apresentar a tela de sucesso

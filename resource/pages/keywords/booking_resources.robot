@@ -66,23 +66,24 @@ que seleciono as Tarifas de ida e Volta
         Press Keys  ${None}  ARROW_UP  
     END
     
+    Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}   40
     Wait Until Page Contains                   Carregando informações    40
-    Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}   30
  
 
 clicar em Prosseguir para Pagamento
-    Wait and Click Element                     ${booking.BTN_PSG_PGTO}
+    Wait and Click Element                     ${booking.BTN_PSG_PGTO}       30
     Wait Until Page Contains                   Carregando informações        40
     Wait Until Element Is Visible              ${booking.VLD_MODAL_PGTO2}    40
     Click Element                              ${booking.BTN_MODAL_PGTO}
     Wait Until Page Contains                   Carregando informações        40
     Wait Until Element Is Visible              ${booking.VLD_MODAL_1CLIQUE}  20  
     Wait and Click Element                     ${booking.BTN_PGTO_1CLIQUE}   10
+    
 
 
 o sistema deverá prosseguir para a tela de Viajantes
-    # Set Selenium Page Load Timeout                                        20
     Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}   
+    
 
 
 que inicio na tela de Viajantes
@@ -95,12 +96,10 @@ que inicio na tela de Viajantes
 
 
 selecionar forma de pagamento, clicar em "Cartão de Crédito"
-    Wait and Click Element                      ${booking.BTN_PSG_PGTO}      30
+    Wait and Click Element                      ${booking.BTN_PSG_PGTO_VIAJANTES}    20
+    Wait Until Page Contains                    Salvando informações       40
     Wait Until Element Is Visible               ${booking.VLD_TELA_PGTO}     20
-    Set Selenium Page Load Timeout                                           20
-    Wait Until Keyword Succeeds      3    20s    Click Element      ${booking.SLC_PGTO}
-    # Click Element                                                 ${booking.SLC_FORMA_PGTO}
-    #Wait Until Element Is Visible                                  ${booking.SLC_PGTO}
+    Wait Until Keyword Succeeds      3    10s    Click Element      ${booking.SLC_PGTO}
     Click Element                               ${booking.SLC_CC}
 
 
@@ -129,26 +128,35 @@ que inicio na tela de pagamento
     que seleciono as Tarifas de ida e Volta
     clicar em Prosseguir para Pagamento
     o sistema deverá prosseguir para a tela de Viajantes
-    que inicio na tela de viajantes
     selecionar forma de pagamento, clicar em "Cartão de Crédito"
     inserir um "Cartão de Crédito" valido, adicionar Cartão
     o sistema deverá retornar para a tela de pagamento
 
 
 selecionar a forma de parcelamento
-    Wait Until Element Is Visible                ${booking.VLD_TELA_PGTO}    30
-    Wait and Click Element                       ${booking.SLC_PARC}
+    Wait Until Element Is Visible                ${booking.VLD_TELA_PGTO}      5
+
+    WHILE  True
+        ${status}  Run keyword and return status   Click Element   ${booking.SLC_PARC}
+        IF   ${status}
+            BREAK
+        END
+        Press Keys  ${None}  ARROW_UP  
+    END
+
     Wait and Click Element                       ${booking.SLC_PARC_1X}
-    Capture Page Screenshot
+    Input Text                                   ${booking.INSERIR_CLR}        11987654321
+    
 
 
-# selecionar o checkbox dos termos de contrato
+selecionar o checkbox dos termos de contrato
+    # Scroll Element Into View                     ${booking.SLC_CHECKBOX}
+    Execute Javascript  window.scrollTo(0, 100%)
+    Select Checkbox                              ${booking.SLC_CHECKBOX}
 
 
-
-
-
-# clicar em "Efetuar Pagamento"
+clicar em "Efetuar Pagamento"
+    Wait and Click Element                        ${booking.FNZ_PGTO}
 
 
 

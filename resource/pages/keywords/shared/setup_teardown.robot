@@ -5,10 +5,10 @@ Resource   ../../../../resource/main.robot
 
 inicia o teste com login 
     [Arguments]                       ${USER}=Default
-    Open Browser                      ${URL_STG}      ${Browser} 
+    Open Browser                      ${URL_STG}      ${Browser}     options=add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--safebrowsing-disable-download-protection");add_argument("--disable-web-security")
     Maximize Browser Window
-    Wait Until Element Is Visible     ${BTN_COOKIES}
-    Click Element                     ${BTN_COOKIES}
+    # Wait Until Element Is Visible     ${BTN_COOKIES}
+    # Click Element                     ${BTN_COOKIES}
     Wait Until Element Is Visible     ${login.BTN_LOGIN}    50
     Click Element                     ${login.BTN_LOGIN}
     Wait Until Element Is Visible     ${login.TELA_LOGIN_TA}    60
