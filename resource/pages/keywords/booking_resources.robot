@@ -67,15 +67,15 @@ que seleciono as Tarifas de ida e Volta
     END
     
     Wait Until Page Contains                   Carregando informações    40
-    Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}   20
+    Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}   30
  
 
 clicar em Prosseguir para Pagamento
-    Wait and Click Element                     ${booking.BTN_PSG_PGTO}        20
-    Wait Until Page Contains                   Carregando informações         40
-    Wait Until Element Is Visible              ${booking.VLD_MODAL_PGTO}      40
+    Wait and Click Element                     ${booking.BTN_PSG_PGTO}
+    Wait Until Page Contains                   Carregando informações        40
+    Wait Until Element Is Visible              ${booking.VLD_MODAL_PGTO2}    40
     Click Element                              ${booking.BTN_MODAL_PGTO}
-    #Wait Until Page Contains                  Carregando informações    40
+    Wait Until Page Contains                   Carregando informações        40
     Wait Until Element Is Visible              ${booking.VLD_MODAL_1CLIQUE}  20  
     Wait and Click Element                     ${booking.BTN_PGTO_1CLIQUE}   10
 
@@ -96,7 +96,7 @@ que inicio na tela de Viajantes
 
 selecionar forma de pagamento, clicar em "Cartão de Crédito"
     Wait and Click Element                      ${booking.BTN_PSG_PGTO}      30
-    Wait Until Element Is Visible               ${booking.VLD_TELA_PGTO}     30
+    Wait Until Element Is Visible               ${booking.VLD_TELA_PGTO}     20
     Set Selenium Page Load Timeout                                           20
     Wait Until Keyword Succeeds      3    20s    Click Element      ${booking.SLC_PGTO}
     # Click Element                                                 ${booking.SLC_FORMA_PGTO}
@@ -119,8 +119,7 @@ inserir um "Cartão de Crédito" valido, adicionar Cartão
 
 
 o sistema deverá retornar para a tela de pagamento
-    Wait Until Element Is Visible               ${booking.VLD_TELA_PGTO}    30
-    Wait and Click Element                      ${booking.SLC_MASCARA_CC}   30
+    Wait Until Element Is Visible                       ${booking.VLD_CC}   30
 
 
 que inicio na tela de pagamento
