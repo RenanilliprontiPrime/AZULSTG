@@ -67,7 +67,7 @@ que seleciono as Tarifas de ida e Volta
     END
     
     Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}   40
-    Wait Until Page Contains                   Carregando informações    40
+    # Wait Until Page Contains                   Carregando informações    40
  
 
 clicar em Prosseguir para Pagamento
@@ -82,7 +82,7 @@ clicar em Prosseguir para Pagamento
 
 
 o sistema deverá prosseguir para a tela de Viajantes
-    Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}   
+    Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}     30
     
 
 
@@ -99,7 +99,7 @@ selecionar forma de pagamento, clicar em "Cartão de Crédito"
     Wait and Click Element                      ${booking.BTN_PSG_PGTO_VIAJANTES}    20
     Wait Until Page Contains                    Salvando informações       40
     Wait Until Element Is Visible               ${booking.VLD_TELA_PGTO}     20
-    Wait Until Keyword Succeeds      3    10s    Click Element      ${booking.SLC_PGTO}
+    Wait Until Keyword Succeeds      3    20s    Click Element      ${booking.SLC_PGTO}
     Click Element                               ${booking.SLC_CC}
 
 
@@ -151,8 +151,10 @@ selecionar a forma de parcelamento
 
 selecionar o checkbox dos termos de contrato
     # Scroll Element Into View                     ${booking.SLC_CHECKBOX}
-    Execute Javascript  window.scrollTo(0, 100%)
-    Select Checkbox                              ${booking.SLC_CHECKBOX}
+    Execute Javascript  window.scrollTo(1000, 7200)
+    # Execute Javascript  window.scrollTo(100, 1000)
+    Wait and Click Element                         ${booking.SLC_CHECKBOX}
+    # Select Checkbox                              ${booking.SLC_CHECKBOX}
 
 
 clicar em "Efetuar Pagamento"

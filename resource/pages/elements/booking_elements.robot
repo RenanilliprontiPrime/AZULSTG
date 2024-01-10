@@ -61,6 +61,6 @@ Resource    ../../../resource/main.robot
 ...                SLC_PARC_1X=(//*[contains(text(),'1x R$')])[1]
 ...                SLC_CLR=//*[text()='Informe o celular']
 ...                INSERIR_CLR=//input[@aria-label='Celular']
-...                SLC_CHECKBOX=//input[@aria-label='Li e estou de acordo com o contrato de transporte aéreo, selecionar']/following-sibling::div[1]
+...                SLC_CHECKBOX=//label[@aria-label='Li e estou de acordo com o contrato de transporte aéreo, selecionar']//div[1]
 ...                FNZ_PGTO=(//*[text()='Finalizar pagamento'])[1]
 
