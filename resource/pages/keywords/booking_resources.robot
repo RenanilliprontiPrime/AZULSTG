@@ -7,7 +7,7 @@ Resource   ../../../resource/main.robot
 
 clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta 
     Wait Until Page Does Not Contain Element        ${login.BTN_LOGIN}               50
-    Wait Until Page Contains                  Estamos carregando suas informações    50
+    Wait Until Page Contains                  Estamos carregando suas informações    60
     ${booking.BOOL_BUSCA_VOOS}        Run Keyword And Return Status    Wait Until Element Is Visible     ${booking.VLD_SELECAODEVOOS}  
     IF        ${booking.BOOL_BUSCA_VOOS} == False
         Click Element        ${booking.BTN_COMPRAR}    
@@ -141,7 +141,7 @@ selecionar a forma de parcelamento
         IF   ${status}
             BREAK
         END
-        Press Keys  ${None}  ARROW_UP  
+        Press Keys  ${None}  ARROW_DOWN 
     END
 
     Wait and Click Element                       ${booking.SLC_PARC_1X}
@@ -150,20 +150,35 @@ selecionar a forma de parcelamento
 
 
 selecionar o checkbox dos termos de contrato
-    # Scroll Element Into View                     ${booking.SLC_CHECKBOX}
-    Execute Javascript  window.scrollTo(1000, 7200)
+    WHILE  True
+        ${status}  Run keyword and return status   Click Element   ${booking.SLC_CHECKBOX}
+        IF   ${status}
+            BREAK
+        END
+        Press Keys  ${None}  ARROW_DOWN  
+    END
+    # Execute Javascript  window.scrollTo(0, 7200)
     # Execute Javascript  window.scrollTo(100, 1000)
     Wait and Click Element                         ${booking.SLC_CHECKBOX}
-    # Select Checkbox                              ${booking.SLC_CHECKBOX}
+    
 
 
 clicar em "Efetuar Pagamento"
-    Wait and Click Element                        ${booking.FNZ_PGTO}
+    WHILE  True
+        ${status}  Run keyword and return status   Click Element   ${booking.FNZ_PGTO}
+        IF   ${status}
+            BREAK
+        END
+        Press Keys  ${None}  ARROW_DOWN  
+    END
+    # Wait Until Page Contains                      ${booking.FNZ_PGTO}
+    # Click Element                                 ${booking.FNZ_PGTO}
 
 
 
 
 # o sistema deverá finalizar o pagamento e apresentar a tela de sucesso
+
 
 
 

@@ -22,7 +22,7 @@ Resource    ../../../resource/main.robot
 ...        BTN_SLC_TRF_IDA=(//button[@aria-label='Selecionar tarifa'])[1]
 ...        SLC_VIAGEM_VOLTA=(//div[@aria-label='Ver tarifas deste voo. Selecionar'])[2]
 ...        BTN_SLC_TRF_VOLTA=(//button[contains(.,'Selecionar tarifaSelecionar tarifa')])[4]
-...        BTN_PSG_PGTO=(//div[text()='Prosseguir para pagamento'])[3]
+...        BTN_PSG_PGTO=(//button[@aria-label='Prosseguir para pagamento. Selecionar'])[2]
 #...        VLD_MODAL_PGTO=//p[text()='Mas não se preocupe, se preferir, você pode fazer isso mais tarde em Minhas viagens.']
 ...        VLD_MODAL_PGTO2=//p[contains(.,'Roberto, temos uma sugestão Azul para você!')]
 ...        BTN_MODAL_PGTO=(//*[text()='Não, obrigado!'])[1]
@@ -62,5 +62,5 @@ Resource    ../../../resource/main.robot
 ...                SLC_CLR=//*[text()='Informe o celular']
 ...                INSERIR_CLR=//input[@aria-label='Celular']
 ...                SLC_CHECKBOX=//label[@aria-label='Li e estou de acordo com o contrato de transporte aéreo, selecionar']//div[1]
-...                FNZ_PGTO=(//*[text()='Finalizar pagamento'])[1]
+...                FNZ_PGTO=//button[@data-test-id='no-id']//div[1]
 
