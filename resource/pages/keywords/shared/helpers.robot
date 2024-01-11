@@ -29,7 +29,7 @@ realiza o login
 
 
 Wait and Click Element
-    [Documentation]    Keyword responsável por aguardar o elemento estar visível e clica.
+    [Documentation]    Keyword responsável por aguardar o elemento estar visível e clicar.
     [Arguments]    ${ELEMENT}    ${TIMEOUT}=20
     Wait until element is visible    ${ELEMENT}    timeout=${TIMEOUT}
     Click element    ${ELEMENT}

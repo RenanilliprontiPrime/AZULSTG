@@ -12,7 +12,7 @@ inicia o teste com login
     Wait and Click Element            ${login.BTN_LOGIN}        50
     Wait Until Element Is Visible     ${login.VLD_TELA_LOGIN}   20
     realiza o login                   USER=${USER}
-    Wait and click element            ${login.BTN_ENTRAR_TUDO_AZUL}
+    Wait and click element            ${login.BTN_ENTRAR_TA}
    
 # inicia teste sem login
 #     Open Browser                      ${Browser} 
