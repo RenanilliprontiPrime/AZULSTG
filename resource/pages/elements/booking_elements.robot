@@ -7,7 +7,7 @@ Resource    ../../../resource/main.robot
 
 ...        VLD_SELECAODEVOOS=//span[@aria-hidden='true'][contains(.,'Para onde vamos voar?')]
 ...        BTN_COMPRAR=(//button[@type='button'][contains(.,'Comprar')])[1]
-...        VALIDA_BTN_COMPRAR=//p[contains(.,'Comece escolhendo a origem e destino para sua viagem:')]
+...        VLD_BTN_COMPRAR=//p[contains(.,'Comece escolhendo a origem e destino para sua viagem:')]
 ...        ORIGEM=//input[contains(@placeholder,'Digite a sua origem')]
 ...        VCP=//p[@class='button__text'][contains(.,'Campinas')]
 ...        DESTINO=//input[contains(@placeholder,'Digite o seu destino')]

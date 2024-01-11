@@ -13,7 +13,7 @@ clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
         Click Element        ${booking.BTN_COMPRAR}    
     END
     
-    Wait Until Element Is Visible             ${booking.VALIDA_BTN_COMPRAR}    10
+    Wait Until Element Is Visible             ${booking.VLD_BTN_COMPRAR}    10
     
     Wait and Input Text                       ${booking.ORIGEM}       VCP
     Wait and Click Element                    ${booking.VCP}
@@ -59,15 +59,14 @@ que seleciono as Tarifas de ida e Volta
     Wait and Click Element                     ${booking.SLC_VIAGEM_VOLTA}    10
    
     WHILE  True
-        ${status}  Run keyword and return status   Click Element   ${booking.BTN_SLC_TRF_VOLTA}
+        ${status}  Run keyword and return status   Wait and Click Element   ${booking.BTN_SLC_TRF_VOLTA}
         IF   ${status}
             BREAK
         END
         Press Keys  ${None}  ARROW_UP  
     END
     
-    Wait Until Element Is Visible              ${booking.BTN_PSG_PGTO}   40
-    # Wait Until Page Contains                   Carregando informações    40
+    Wait Until Element Is Visible                ${booking.BTN_PSG_PGTO}   40
  
 
 clicar em Prosseguir para Pagamento
@@ -82,7 +81,7 @@ clicar em Prosseguir para Pagamento
 
 
 o sistema deverá prosseguir para a tela de Viajantes
-    Wait Until Element Is Visible              ${booking.TELA_VIAJANTES}     30
+    Wait Until Element Is Visible                  ${booking.TELA_VIAJANTES}     30
     
 
 
@@ -118,7 +117,7 @@ inserir um "Cartão de Crédito" valido, adicionar Cartão
 
 
 o sistema deverá retornar para a tela de pagamento
-    Wait Until Element Is Visible                       ${booking.VLD_CC}   30
+    Wait Until Element Is Visible                   ${booking.VLD_CC}   30
 
 
 que inicio na tela de pagamento
@@ -174,9 +173,9 @@ clicar em "Efetuar Pagamento"
 
 
 o sistema deverá finalizar o pagamento e apresentar a tela de sucesso
-    
-    Wait Until Element Is Visible                   ${booking.TELA_PROX_VIAGEM}         40
-    Wait Until Element Is Visible                   ${booking.VLD_TELA_PROX_VIAGEM}     40
+
+    Wait Until Element Is Visible               ${booking.TELA_PROX_VIAGEM}         40
+    Wait Until Element Is Visible               ${booking.VLD_TELA_PROX_VIAGEM}     40
 
 
 
