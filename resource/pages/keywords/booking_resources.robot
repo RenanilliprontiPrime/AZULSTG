@@ -157,27 +157,26 @@ selecionar o checkbox dos termos de contrato
         END
         Press Keys  ${None}  ARROW_DOWN  
     END
-    # Execute Javascript  window.scrollTo(0, 7200)
-    # Execute Javascript  window.scrollTo(100, 1000)
+   
     Wait and Click Element                         ${booking.SLC_CHECKBOX}
     
 
 
 clicar em "Efetuar Pagamento"
     WHILE  True
-        ${status}  Run keyword and return status   Click Element   ${booking.FNZ_PGTO}
+        ${status}  Run keyword and return status   Wait and Click Element   ${booking.FNZ_PGTO}
         IF   ${status}
             BREAK
         END
         Press Keys  ${None}  ARROW_DOWN  
     END
-    # Wait Until Page Contains                      ${booking.FNZ_PGTO}
-    # Click Element                                 ${booking.FNZ_PGTO}
+   
 
 
-
-
-# o sistema deverá finalizar o pagamento e apresentar a tela de sucesso
+o sistema deverá finalizar o pagamento e apresentar a tela de sucesso
+    
+    Wait Until Element Is Visible                   ${booking.TELA_PROX_VIAGEM}         40
+    Wait Until Element Is Visible                   ${booking.VLD_TELA_PROX_VIAGEM}     40
 
 
 

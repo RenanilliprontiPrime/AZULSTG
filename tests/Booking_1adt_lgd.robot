@@ -46,4 +46,4 @@ Caso de testes 04 - Efetuar Pagamento da Tarifa
     Quando selecionar a forma de parcelamento
     E selecionar o checkbox dos termos de contrato
     E clicar em "Efetuar Pagamento"
-    # Então o sistema deverá finalizar o pagamento e apresentar a tela de sucesso
+    Então o sistema deverá finalizar o pagamento e apresentar a tela de sucesso

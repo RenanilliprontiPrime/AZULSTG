@@ -64,3 +64,10 @@ Resource    ../../../resource/main.robot
 ...                SLC_CHECKBOX=//label[@aria-label='Li e estou de acordo com o contrato de transporte aéreo, selecionar']//div[1]
 ...                FNZ_PGTO=//button[@data-test-id='no-id']//div[1]
 
+
+
+#Variáveis Tela Próxima viagem
+
+...               TELA_PROX_VIAGEM=//h3[@arial-label='Pronto para sua próxima viagem?']
+...               VLD_TELA_PROX_VIAGEM=//h2[contains(.,'Viajantes')]
+
