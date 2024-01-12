@@ -5,93 +5,32 @@ Resource   ../../../resource/main.robot
 
 *** Keywords ***
 
-clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta 
+clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
     Wait Until Page Does Not Contain Element        ${login.BTN_LOGIN}               50
     Wait Until Page Contains                  Estamos carregando suas informações    60
-    ${booking.BOOL_BUSCA_VOOS}        Run Keyword And Return Status    Wait Until Element Is Visible     ${booking.VLD_SELECAODEVOOS}  
-    IF        ${booking.BOOL_BUSCA_VOOS} == False
-        Click Element        ${booking.BTN_COMPRAR}    
-    END
-    
-    Wait Until Element Is Visible             ${booking.VLD_BTN_COMPRAR}    10
-    
-    Wait and Input Text                       ${booking.ORIGEM}       VCP
-    Wait and Click Element                    ${booking.VCP}
-    
-    Wait and Input Text                       ${booking.DESTINO}      BSB
-    Wait and Click Element                    ${booking.BSB} 
-    
-    Wait and click Element                    ${booking.DATA}
-    
-    Input Text                                ${booking.DATA_DE_IDA}         05/02/2024
-    Input Text                                ${booking.DATA_DE_VOLTA}       20/02/2024
-                     
-    Wait and Click Element                    ${booking.BTN_SELECIONA_DATA}        10
 
-clicar em "Buscar passagens"
-    Wait and Click Element                    ${booking.BTN_BUSCAR_PASSAGENS}
+    clicar em comprar passagens
 
+    inserir origem
 
-o site deverá exibir a lista de voos
-    Wait Until Page Does Not Contain          Estamos esquentando as turbinas    40
-    Wait Until Element Is Visible             ${booking.SLC_VIAGEM_IDA}          40
+    inserir destino
 
+    inserir data ida
 
+    inserir data volta
 
-que inicio na tela de consulta de voo
-    clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
-    clicar em "Buscar passagens"
+    confirma seleção de data
+
+    clicar em buscar passagens
+
     o site deverá exibir a lista de voos
 
-
-que seleciono as Tarifas de ida e Volta
-    Wait and Click Element                    ${booking.SLC_VIAGEM_IDA}          10
-
-    
-    WHILE  True
-        ${status}  Run keyword and return status   Click Element   ${booking.BTN_SLC_TRF_IDA}
-        IF   ${status}
-            BREAK
-        END
-        Press Keys  ${None}  ARROW_UP  
-    END
-    
-    Wait and Click Element                     ${booking.SLC_VIAGEM_VOLTA}    10
-   
-    WHILE  True
-        ${status}  Run keyword and return status   Wait and Click Element   ${booking.BTN_SLC_TRF_VOLTA}
-        IF   ${status}
-            BREAK
-        END
-        Press Keys  ${None}  ARROW_UP  
-    END
-    
-    Wait Until Element Is Visible                ${booking.BTN_PSG_PGTO}   40
- 
-
-clicar em Prosseguir para Pagamento
-    Wait and Click Element                     ${booking.BTN_PSG_PGTO}       30
-    Wait Until Page Contains                   Carregando informações        40
-    Wait Until Element Is Visible              ${booking.VLD_MODAL_PGTO2}    40
-    Click Element                              ${booking.BTN_MODAL_PGTO}
-    Wait Until Page Contains                   Carregando informações        40
-    Wait Until Element Is Visible              ${booking.VLD_MODAL_1CLIQUE}  20  
-    Wait and Click Element                     ${booking.BTN_PGTO_1CLIQUE}   10
-    
-
-
-o sistema deverá prosseguir para a tela de Viajantes
-    Wait Until Element Is Visible                  ${booking.TELA_VIAJANTES}     30
-    
-
-
-que inicio na tela de Viajantes
-    clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
-    clicar em "Buscar passagens"
-    o site deverá exibir a lista de voos
     que seleciono as Tarifas de ida e Volta
+
     clicar em Prosseguir para Pagamento
+
     o sistema deverá prosseguir para a tela de Viajantes
+
 
 
 selecionar forma de pagamento, clicar em "Cartão de Crédito"
@@ -120,16 +59,16 @@ o sistema deverá retornar para a tela de pagamento
     Wait Until Element Is Visible                   ${booking.VLD_CC}   30
 
 
-que inicio na tela de pagamento
-    clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
-    clicar em "Buscar passagens"
-    o site deverá exibir a lista de voos
-    que seleciono as Tarifas de ida e Volta
-    clicar em Prosseguir para Pagamento
-    o sistema deverá prosseguir para a tela de Viajantes
-    selecionar forma de pagamento, clicar em "Cartão de Crédito"
-    inserir um "Cartão de Crédito" valido, adicionar Cartão
-    o sistema deverá retornar para a tela de pagamento
+# que inicio na tela de pagamento
+#     clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
+#     clicar em "Buscar passagens"
+#     o site deverá exibir a lista de voos
+#     que seleciono as Tarifas de ida e Volta
+#     clicar em Prosseguir para Pagamento
+#     o sistema deverá prosseguir para a tela de Viajantes
+#     selecionar forma de pagamento, clicar em "Cartão de Crédito"
+#     inserir um "Cartão de Crédito" valido, adicionar Cartão
+#     o sistema deverá retornar para a tela de pagamento
 
 
 selecionar a forma de parcelamento
