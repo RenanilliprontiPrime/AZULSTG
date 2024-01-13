@@ -50,4 +50,4 @@ clicar em buscar passagens
 o site devera exibir a lista de voos
     Wait Until Page Does Not Contain          Estamos esquentando as turbinas        40
     Wait Until Element Is Visible             ${selecaovoos.VALIDA_VOOS}        40
-    
+    Capture Page Screenshot

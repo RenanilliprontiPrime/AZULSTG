@@ -11,7 +11,6 @@ Resource   ../../../resource/main.robot
     # Quando clicar em prosseguir para pagamento    
 
 seleciono a tarifa de ida e volta
-    # Wait Until Element Is Visible                         ${selecaopassagens.BTN_PSG_PGTO}       40
     Wait and Click Element                                ${selecaopassagens.SLC_VIAGEM_IDA}
     
     WHILE  True

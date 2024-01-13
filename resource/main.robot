@@ -37,3 +37,4 @@ Resource      ../resource/pages/keywords/prox_viagem_resources.robot
 Resource      ../resource/pages/keywords/shared/hooks.robot
 Resource      ../resource/pages/keywords/shared/setup_teardown.robot
 Resource      ../resource/pages/keywords/shared/helpers.robot
+# Resource      ../resource/pages/keywords/shared/loading.robot

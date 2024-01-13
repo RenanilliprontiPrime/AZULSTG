@@ -9,8 +9,6 @@ Resource    ../../../resource/main.robot
 ...        BTN_IR_PGTO=(//div[text()='Ir para pagamento'])[1]
 ...        VLD_TELA_PGTO=//h3[contains(.,'Agora é só realizar o pagamento')]
 ...        SLC_FORMA_PGTO=//label[contains(.,'Selecionar forma de pagamento')]
-
-
 ...        SLC_PGTO=//label[@aria-label='Escolha como deseja pagar. Selecionar forma de pagamento. Selecionar']
 ...        SLC_CC=//button[@aria-label='Cadastrar cartão de crédito. Selecionar']
 ...        VLD_ADD_CC=//h3[@arial-label='Adicionar cartão'][contains(.,'Adicionar cartão')]
