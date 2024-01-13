@@ -11,36 +11,49 @@ Test Setup      inicia o teste com login
 
 Caso de Testes 01 - Validar busca de passagens no site
     [Documentation]    Esse caso de teste serve para efetuar o booking no site
-    [Tags]             BOOKING   t1
+    [Tags]             BOOKING       t1
     [Setup]            inicia o teste com login  USER=Tudo Azul
-    Dado clicar em comprar passagens, inserir origem, destino e datas de Ida e Volta
-    Quando clicar em buscar passagens
-    Então o site deverá exibir a lista de voos
+    Dado clico em comprar passagem
+    E inserir origem 
+    E inserir destino 
+    E inserir data ida 
+    E inserir data volta
+    Quando confirma seleção de data
+    E clicar em buscar passagens
+    Então o site devera exibir a lista de voos
 
 
 Caso de Testes 02 - Selecionar Passagens e Prosseguir para Viajantes
     [Documentation]        Esse caso de teste serve para selecionar as tarifas em REAIS
-    [Tags]                 SELECIONAR TARIFA    t2
-    [Setup]                inicia o teste com login  USER=Tudo Azul
-    Dado que seleciono as tarifas de ida e volta
-    Quando clicar em Prosseguir para Pagamento
-    Então o sistema deverá prosseguir para a tela de Viajantes
+    [Tags]                 SELECIONAR TARIFA        t2
+    [Setup]                inicia o teste na tela de voos
+    Dado inicia o teste na tela de voos
+    E seleciono a tarifa de ida e volta
+    Quando clicar em prosseguir para pagamento
+    Então o sistema devera prosseguir para a tela de viajantes
 
 
 Caso de Testes 03 - Validar a inserção de Cartão de Crédito
     [Documentation]        Esse caso de testes serve para validar a inserção de Cartão de Crédito na tela de pagamento
     [Tags]                 INSERIR CARTÃO    t3
-    [Setup]                inicia o teste com login  USER=Tudo Azul
-    Dado selecionar forma de pagamento, clicar em "Cartão de Crédito"
-    Quando inserir um "Cartão de Crédito" valido, adicionar Cartão
-    Então o sistema deverá retornar para a tela de pagamento
+    [Setup]                inicia o teste na tela de viajantes
+    Dado inicia o teste na tela de viajantes
+    E seleciono forma de pagamento, clicar em cartão de crédito
+    Quando inserir um cartão de crédito valido
+    E clicar em adicionar cartão
+    Então o sistema devera retornar para a tela de pagamento
 
 
 Caso de testes 04 - Efetuar Pagamento da Tarifa
     [Documentation]        Esse caso de teste serve para fazer a finalização do pagamento
     [Tags]                 FINALIZAR PAGAMENTO    t4
-    [Setup]                inicia o teste com login  USER=Tudo Azul
-    Dado selecionar a forma de parcelamento
+    [Setup]                inicia o teste na tela de pagamentos
+    Dado inicia o teste na tela de pagamentos
+    E seleciono a forma de parcelamento
     Quando selecionar o checkbox dos termos de contrato
-    E clicar em "Efetuar Pagamento"
-    Então o sistema deverá finalizar o pagamento e apresentar a tela de sucesso
+    E clicar em efetuar pagamento
+    Então o sistema devera finalizar o pagamento 
+    E apresentar a tela de sucesso
+
+
+

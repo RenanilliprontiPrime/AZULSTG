@@ -12,8 +12,9 @@ Resource      ../resource/pages/elements/selecaovoos_elements.robot
 Resource      ../resource/pages/elements/selecaopassagens_elements.robot
 Resource      ../resource/pages/elements/pagamentos_elements.robot
 Resource      ../resource/pages/elements/viajantes_elements.robot
+Resource      ../resource/pages/elements/prox_viagem_elements.robot
 
-#variaveis
+#VARIAVEIS
 
 Variables      ../resource/credenciais.yaml
 Variables      ../resource/pgto.yaml
@@ -28,6 +29,7 @@ Resource      ../resource/pages/keywords/selecaovoos_resources.robot
 Resource      ../resource/pages/keywords/selecaopassagens_resources.robot
 Resource      ../resource/pages/keywords/pagamentos_resources.robot
 Resource      ../resource/pages/keywords/viajantes_resources.robot
+Resource      ../resource/pages/keywords/prox_viagem_resources.robot
 
 
 #KEYWORDS COMPARTILHADAS
