@@ -35,7 +35,7 @@ Caso de Testes 02 - Selecionar Passagens e Prosseguir para Viajantes
 Caso de Testes 03 - Validar a inserção de Cartão de Crédito
     [Documentation]        Esse caso de testes serve para validar a inserção de Cartão de Crédito na tela de pagamento
     [Tags]                 INSERIR CARTÃO    t3
-    # [Setup]                inicia o teste com login  USER=Tudo Azul
+    [Setup]                inicia o teste com login  USER=Tudo Azul
     Dado que seleciono forma de pagamento, clicar em cartão de crédito
     Quando inserir um cartão de crédito valido
     E clicar em adicionar cartão
@@ -45,7 +45,7 @@ Caso de Testes 03 - Validar a inserção de Cartão de Crédito
 Caso de testes 04 - Efetuar Pagamento da Tarifa
     [Documentation]        Esse caso de teste serve para fazer a finalização do pagamento
     [Tags]                 FINALIZAR PAGAMENTO    t4
-    # [Setup]                inicia o teste com login  USER=Tudo Azul
+    [Setup]                inicia o teste com login  USER=Tudo Azul
     Dado que seleciono a forma de parcelamento
     Quando selecionar o checkbox dos termos de contrato
     E clicar em efetuar pagamento
