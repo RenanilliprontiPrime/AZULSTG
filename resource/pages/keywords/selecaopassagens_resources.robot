@@ -10,7 +10,7 @@ Resource   ../../../resource/main.robot
     # Dado que seleciono a tarifa de ida e volta
     # Quando clicar em prosseguir para pagamento    
 
-seleciono a tarifa de ida e volta
+que seleciono a tarifa de ida e volta
     Wait and Click Element                                ${selecaopassagens.SLC_VIAGEM_IDA}
     
     WHILE  True

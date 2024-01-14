@@ -12,7 +12,7 @@ Resource   ../../../resource/main.robot
     # E clicar em adicionar cartão
     # Então o sistema devera retornar para a tela de pagamento
 
-seleciono forma de pagamento, clicar em cartão de crédito
+que seleciono forma de pagamento, clicar em cartão de crédito
     Wait Until Element Is Visible                                   ${pagamentos.VLD_TELA_PGTO}        30
     Wait Until Keyword Succeeds      3    20s    Click Element      ${pagamentos.SLC_PGTO}
     Click Element                                                   ${pagamentos.SLC_CC}
@@ -44,7 +44,7 @@ o sistema devera retornar para a tela de pagamento
      
     
 
-seleciono a forma de parcelamento
+que seleciono a forma de parcelamento
    
     WHILE  True
         ${status}  Run keyword and return status   Click Element   ${pagamentos.SLC_PARC}
