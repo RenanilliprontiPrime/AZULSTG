@@ -26,7 +26,7 @@ inserir um cartão de crédito valido
     Wait and Input Text                                             ${pagamentos.NMR_CPF}               ${Numero_CPF}
     Wait and Click Element                                          ${pagamentos.INSERIR_NOME} 
     Wait and Input Text                                             ${pagamentos.NOME}                  ${Nome}
-    
+
 
 clicar em adicionar cartão    
     Wait and Click Element                                          ${pagamentos.BTN_ADD_CC}
@@ -35,9 +35,6 @@ clicar em adicionar cartão
 o sistema devera retornar para a tela de pagamento
     Wait Until Element Is Visible                   ${pagamentos.VLD_CC}       30
 
-    # Dado que seleciono a forma de parcelamento
-    # Quando selecionar o checkbox dos termos de contrato
-    # E clicar em efetuar pagamento
 
 que eu esteja na tela de pagamento
     que eu esteja na tela de seleção de passagens
@@ -62,7 +59,6 @@ seleciono a forma de parcelamento
 
     Wait and Click Element                       ${pagamentos.SLC_PARC_1X}
     Input Text                                   ${pagamentos.INSERIR_CLR}        11987654321
-    
 
 
 selecionar o checkbox dos termos de contrato
@@ -75,7 +71,6 @@ selecionar o checkbox dos termos de contrato
     END
    
     Wait and Click Element                         ${pagamentos.SLC_CHECKBOX}
-    
 
 
 clicar em efetuar pagamento

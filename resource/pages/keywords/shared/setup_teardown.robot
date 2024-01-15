@@ -4,7 +4,7 @@ Resource   ../../../../resource/main.robot
 *** Keywords ***
 
 inicia o teste com login 
-    [Arguments]                       ${USER}=Default
+    [Arguments]                       ${USER}=Tudo Azul
     Open Browser                      ${URL_STG}      ${Browser}     options=add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--safebrowsing-disable-download-protection");add_argument("--disable-web-security")
     Maximize Browser Window
     # Wait Until Element Is Visible     ${BTN_COOKIES}

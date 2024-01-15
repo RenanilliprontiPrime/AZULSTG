@@ -18,6 +18,7 @@ clico em comprar passagem
     Wait Until Page Contains                          Estamos carregando suas informações        60
     Wait Until Page Does Not Contain                  Estamos carregando suas informações        60
     ${PRIMEIRO_NOME}        Get Text        ${login.LABEL_NOME}
+    ${PRIMEIRO_NOME}        Convert To Title Case           ${PRIMEIRO_NOME}
     Set Test Variable        ${PRIMEIRO_NOME}
     ${BOOL_BUSCA_VOOS}        Run Keyword And Return Status    Wait Until Element Is Visible     ${selecaovoos.VLD_SELECAODEVOOS}  
     IF        ${BOOL_BUSCA_VOOS} == False
@@ -58,4 +59,5 @@ o site devera exibir a lista de voos
     Wait Until Page Does Not Contain          Estamos esquentando as turbinas        40
     # Wait Until Element Is Visible             ${selecaovoos.VALIDA_VOOS}        40
     Wait Until Page Contains                  Olá ${PRIMEIRO_NOME}, esse é o resultado de sua busca.        30
-    
+
+
