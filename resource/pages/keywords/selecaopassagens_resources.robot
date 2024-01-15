@@ -7,10 +7,19 @@ Resource   ../../../resource/main.robot
 
 *** Keywords ***
 
-    # Dado que seleciono a tarifa de ida e volta
-    # Quando clicar em prosseguir para pagamento    
 
-que seleciono a tarifa de ida e volta
+que eu esteja na tela de seleção de passagens
+    clico em comprar passagem
+    inserir origem 
+    inserir destino 
+    inserir data ida 
+    inserir data volta
+    confirma seleção de data
+    clicar em buscar passagens
+    o site devera exibir a lista de voos
+
+
+eu selecionar as tarifas de ida e volta
     Wait and Click Element                                ${selecaopassagens.SLC_VIAGEM_IDA}
     
     WHILE  True
@@ -30,7 +39,6 @@ que seleciono a tarifa de ida e volta
         END
         Press Keys  ${None}  ARROW_UP  
     END
-    
 
 
 clicar em prosseguir para pagamento

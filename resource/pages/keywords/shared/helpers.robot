@@ -6,7 +6,7 @@ Resource   ../../../../resource/main.robot
 
 realiza o login
     [Documentation]    Keyword responsável por fazer o Login no app, a partir da página inicial.
-    [Arguments]    ${USER}=Default
+    [Arguments]    ${USER}=Tudo Azul
     Wait and Click element    ${login.CAMPO_LOGIN}    TIMEOUT=20
     
 

@@ -12,3 +12,4 @@ Resource    ../../../resource/main.robot
 ...           VLD_TELA_LOGIN=//span[text()='Login Tudo']
 ...           TELA_LOGIN_CARREGANDO=//h2[contains(@aria-label,'Estamos carregando suas informações')]
 ...           VLD_LOGIN=//img[@aria-label='Azul Linhas Aéreas']
+...           LABEL_NOME=(//p[@class='name__text'])[3]

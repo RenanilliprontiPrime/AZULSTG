@@ -9,46 +9,13 @@ Test Setup      inicia o teste com login
 
 *** Test Cases ***
 
-# Caso de Testes 01 - Validar busca de passagens no site
-#     [Documentation]    Esse caso de teste serve para efetuar o booking no site
-#     [Tags]             BOOKING       t1
+# Caso de Testes 01 - Validar compra de passagens 3 pax (2Adt's e 1 Chd) no site
+#     [Documentation]    Realizar compra de reserva nacional com cliente "TudoAzul" logado, para pax "ADT" em "reais", com tarifa "Azul", somente IDA, sem serviços adicionais e com pagamento no cartão de crédito "à vista" 
+#     [Tags]             BOOKING DOMÉSTICO
 #     [Setup]            inicia o teste com login  USER=Tudo Azul
-#     Dado clico em comprar passagem
-#     E inserir origem 
-#     E inserir destino 
-#     E inserir data ida 
-#     E inserir data volta
-#     Quando confirma seleção de data
-#     E inserir a quantidade de passageiros
-#     E clicar em buscar passagens
-#     Então o site devera exibir a lista de voos
+    #   Dado que o cliente esteja com o destino de voo selecionado, data, forma de pagamento em Reais, passageiros 
+	#   Quando selecionar a passagem desejada escolhendo a tarifa "Azul", clicar em "Informar viajantes", inserir os dados do passageiro, inserir a forma de pagamento no cartão de crédito à vista 
+	#   Então o sistema deverá apresentar a tela da reserva confirmada com os dados do voo e os serviços adicionais habilitados.
 
 
-# Caso de Testes 02 - Selecionar Passagens e Prosseguir para Viajantes
-#     [Documentation]        Esse caso de teste serve para selecionar as tarifas em REAIS
-#     [Tags]                 SELECIONAR TARIFA        t2
-#     [Setup]                inicia o teste com login  USER=Tudo Azul
-#     Dado que seleciono a tarifa de ida e volta
-#     Quando clicar em prosseguir para pagamento
-#     Então o sistema devera prosseguir para a tela de viajantes
 
-
-# Caso de Testes 03 - Validar a inserção de Cartão de Crédito
-#     [Documentation]        Esse caso de testes serve para validar a inserção de Cartão de Crédito na tela de pagamento
-#     [Tags]                 INSERIR CARTÃO    t3
-#     [Setup]                inicia o teste com login  USER=Tudo Azul
-#     Dado que seleciono forma de pagamento, clicar em cartão de crédito
-#     Quando inserir um cartão de crédito valido
-#     E clicar em adicionar cartão
-#     Então o sistema devera retornar para a tela de pagamento
-
-
-# Caso de testes 04 - Efetuar Pagamento da Tarifa
-#     [Documentation]        Esse caso de teste serve para fazer a finalização do pagamento
-#     [Tags]                 FINALIZAR PAGAMENTO    t4
-#     [Setup]                inicia o teste com login  USER=Tudo Azul
-#     Dado que seleciono a forma de parcelamento
-#     Quando selecionar o checkbox dos termos de contrato
-#     E clicar em efetuar pagamento
-#     Então o sistema devera finalizar o pagamento 
-#     E apresentar a tela de sucesso

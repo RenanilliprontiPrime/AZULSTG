@@ -2,6 +2,7 @@
 
 Library   SeleniumLibrary
 Library         yaml
+Library       String
 
 #ELEMENTS
 

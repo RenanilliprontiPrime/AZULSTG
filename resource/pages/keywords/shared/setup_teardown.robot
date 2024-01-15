@@ -13,6 +13,7 @@ inicia o teste com login
     Wait Until Element Is Visible     ${login.VLD_TELA_LOGIN}   20
     realiza o login                   USER=${USER}
     Wait and click element            ${login.BTN_ENTRAR_TA}
+    
 
 
 

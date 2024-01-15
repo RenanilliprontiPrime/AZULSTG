@@ -7,12 +7,8 @@ Resource   ../../../resource/main.robot
 
 *** Keywords ***
 
-    # Dado que seleciono forma de pagamento, clicar em cartão de crédito
-    # Quando inserir um cartão de crédito valido
-    # E clicar em adicionar cartão
-    # Então o sistema devera retornar para a tela de pagamento
 
-que seleciono forma de pagamento, clicar em cartão de crédito
+selecionar forma de pagamento, clicar em cartão de crédito
     Wait Until Element Is Visible                                   ${pagamentos.VLD_TELA_PGTO}        30
     Wait Until Keyword Succeeds      3    20s    Click Element      ${pagamentos.SLC_PGTO}
     Click Element                                                   ${pagamentos.SLC_CC}
@@ -31,6 +27,7 @@ inserir um cartão de crédito valido
     Wait and Click Element                                          ${pagamentos.INSERIR_NOME} 
     Wait and Input Text                                             ${pagamentos.NOME}                  ${Nome}
     
+
 clicar em adicionar cartão    
     Wait and Click Element                                          ${pagamentos.BTN_ADD_CC}
 
@@ -41,10 +38,19 @@ o sistema devera retornar para a tela de pagamento
     # Dado que seleciono a forma de parcelamento
     # Quando selecionar o checkbox dos termos de contrato
     # E clicar em efetuar pagamento
-     
-    
 
-que seleciono a forma de parcelamento
+que eu esteja na tela de pagamento
+    que eu esteja na tela de seleção de passagens
+    eu selecionar as tarifas de ida e volta
+    clicar em prosseguir para pagamento
+    o sistema devera prosseguir para a tela de viajantes
+    selecionar forma de pagamento, clicar em cartão de crédito
+    inserir um cartão de crédito valido
+    clicar em adicionar cartão
+    o sistema devera retornar para a tela de pagamento
+
+
+seleciono a forma de parcelamento
    
     WHILE  True
         ${status}  Run keyword and return status   Click Element   ${pagamentos.SLC_PARC}
@@ -80,5 +86,7 @@ clicar em efetuar pagamento
         END
         Press Keys  ${None}  ARROW_DOWN  
     END
+
+
 
 
