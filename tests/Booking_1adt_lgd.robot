@@ -1,7 +1,7 @@
 Language: Brazilian Portuguese
 
 *** Settings ***
-Documentation    Essa suite testa o site da Azul
+Documentation    Essa suite testa o booking de 1 ADT Logado
 Resource         ../resource/main.robot
 Test Setup      inicia o teste com login 
 

@@ -40,3 +40,6 @@ Wait and Input Text
     [Arguments]    ${ELEMENT}    ${TEXT}    ${TIMEOUT}=10
     Wait until element is visible    ${ELEMENT}
     Input text    ${ELEMENT}    ${TEXT}
+
+
+
