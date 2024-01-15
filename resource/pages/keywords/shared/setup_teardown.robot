@@ -5,7 +5,7 @@ Resource   ../../../../resource/main.robot
 
 inicia o teste com login 
     [Arguments]                       ${USER}=Tudo Azul
-    Open Browser                      ${URL_STG}      ${Browser}     options=add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--safebrowsing-disable-download-protection");add_argument("--disable-web-security")
+    Open Browser                      ${URL_STG}      headless ${Browser}     options=add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--safebrowsing-disable-download-protection");add_argument("--disable-web-security")
     Maximize Browser Window
     # Wait Until Element Is Visible     ${BTN_COOKIES}
     # Click Element                     ${BTN_COOKIES}

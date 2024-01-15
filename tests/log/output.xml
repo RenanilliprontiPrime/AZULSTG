@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240115 17:52:23.076" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240115 19:45:23.395" rpa="false" schemaversion="4">
 <suite id="s1" name="Booking 1Adt Lgd" source="C:\Automation_Site\AZULSTG\tests\booking_1adt_lgd.robot">
 <test id="s1-t1" name="Caso de Testes 01 - Validar busca de passagens no site" line="12">
 <kw name="inicia o teste com login" library="setup_teardown" type="SETUP">
 <arg>USER=Tudo Azul</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL_STG}</arg>
-<arg>${Browser}</arg>
+<arg>headless ${Browser}</arg>
 <arg>options=add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--safebrowsing-disable-download-protection");add_argument("--disable-web-security")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240115 17:52:23.470" level="INFO">Opening browser 'Chrome' to base url 'https://azul-stage65.adobecqms.net/br/pt/home'.</msg>
-<status status="PASS" starttime="20240115 17:52:23.470" endtime="20240115 17:52:31.718"/>
+<msg timestamp="20240115 19:45:23.903" level="INFO">Opening browser 'headless chrome' to base url 'https://azul-stage65.adobecqms.net/br/pt/home'.</msg>
+<status status="PASS" starttime="20240115 19:45:23.903" endtime="20240115 19:45:29.933"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240115 17:52:31.718" endtime="20240115 17:52:33.336"/>
+<status status="PASS" starttime="20240115 19:45:29.933" endtime="20240115 19:45:30.062"/>
 </kw>
 <kw name="Wait and Click Element" library="helpers">
 <arg>${login.BTN_LOGIN}</arg>
@@ -24,21 +24,21 @@
 <arg>${ELEMENT}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:33.338" endtime="20240115 17:52:34.040"/>
+<status status="PASS" starttime="20240115 19:45:30.067" endtime="20240115 19:45:34.008"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:34.041" level="INFO">Clicking element '(//span[text()='Fazer Login'])[2]'.</msg>
-<status status="PASS" starttime="20240115 17:52:34.040" endtime="20240115 17:52:34.495"/>
+<msg timestamp="20240115 19:45:34.009" level="INFO">Clicking element '(//span[text()='Fazer Login'])[2]'.</msg>
+<status status="PASS" starttime="20240115 19:45:34.008" endtime="20240115 19:45:34.499"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:33.336" endtime="20240115 17:52:34.495"/>
+<status status="PASS" starttime="20240115 19:45:30.063" endtime="20240115 19:45:34.499"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${login.VLD_TELA_LOGIN}</arg>
 <arg>20</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:34.495" endtime="20240115 17:52:36.958"/>
+<status status="PASS" starttime="20240115 19:45:34.499" endtime="20240115 19:45:34.881"/>
 </kw>
 <kw name="realiza o login" library="helpers">
 <arg>USER=${USER}</arg>
@@ -51,15 +51,15 @@
 <arg>${ELEMENT}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:36.960" endtime="20240115 17:52:37.019"/>
+<status status="PASS" starttime="20240115 19:45:34.883" endtime="20240115 19:45:34.934"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:37.020" level="INFO">Clicking element '//input[contains(@aria-label,'Informe CPF ou Nº TudoAzul')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:37.019" endtime="20240115 17:52:37.182"/>
+<msg timestamp="20240115 19:45:34.935" level="INFO">Clicking element '//input[contains(@aria-label,'Informe CPF ou Nº TudoAzul')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:34.934" endtime="20240115 19:45:35.138"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:36.959" endtime="20240115 17:52:37.182"/>
+<status status="PASS" starttime="20240115 19:45:34.882" endtime="20240115 19:45:35.138"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${USER}&quot; == &quot;Tudo Azul&quot;">
@@ -70,16 +70,16 @@
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:37.185" endtime="20240115 17:52:37.329"/>
+<status status="PASS" starttime="20240115 19:45:35.141" endtime="20240115 19:45:35.184"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <arg>${TEXT}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:37.331" level="INFO">Typing text '18124874360' into text field '//input[contains(@aria-label,'Informe CPF ou Nº TudoAzul')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:37.329" endtime="20240115 17:52:37.647"/>
+<msg timestamp="20240115 19:45:35.185" level="INFO">Typing text '18124874360' into text field '//input[contains(@aria-label,'Informe CPF ou Nº TudoAzul')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:35.184" endtime="20240115 19:45:35.488"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:37.182" endtime="20240115 17:52:37.647"/>
+<status status="PASS" starttime="20240115 19:45:35.139" endtime="20240115 19:45:35.488"/>
 </kw>
 <kw name="Wait and Input Text" library="helpers">
 <arg>${login.CAMPO_SENHA}</arg>
@@ -88,82 +88,82 @@
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:37.648" endtime="20240115 17:52:37.680"/>
+<status status="PASS" starttime="20240115 19:45:35.489" endtime="20240115 19:45:35.521"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <arg>${TEXT}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:37.681" level="INFO">Typing text 'Azul2023**' into text field '//input[contains(@type,'password')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:37.680" endtime="20240115 17:52:37.858"/>
+<msg timestamp="20240115 19:45:35.521" level="INFO">Typing text 'Azul2023**' into text field '//input[contains(@type,'password')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:35.521" endtime="20240115 19:45:35.735"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:37.647" endtime="20240115 17:52:37.858"/>
+<status status="PASS" starttime="20240115 19:45:35.488" endtime="20240115 19:45:35.735"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:37.182" endtime="20240115 17:52:37.859"/>
+<status status="PASS" starttime="20240115 19:45:35.138" endtime="20240115 19:45:35.735"/>
 </branch>
 <branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Tudo Azul II&quot;">
 <kw name="Wait and Input Text" library="helpers">
 <arg>${login.CAMPO_LOGIN}</arg>
 <arg>${TA_2}</arg>
 <doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:52:37.859" endtime="20240115 17:52:37.859"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.736" endtime="20240115 19:45:35.736"/>
 </kw>
 <kw name="Wait and Input Text" library="helpers">
 <arg>${login.CAMPO_SENHA}</arg>
 <arg>${PWD}</arg>
 <doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:52:37.859" endtime="20240115 17:52:37.859"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.736" endtime="20240115 19:45:35.736"/>
 </kw>
-<status status="NOT RUN" starttime="20240115 17:52:37.859" endtime="20240115 17:52:37.859"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.735" endtime="20240115 19:45:35.736"/>
 </branch>
 <branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Safira I&quot;">
 <kw name="Wait and Input Text" library="helpers">
 <arg>${login.CAMPO_LOGIN}</arg>
 <arg>${SAFIRA_1}</arg>
 <doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:52:37.859" endtime="20240115 17:52:37.859"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.736" endtime="20240115 19:45:35.736"/>
 </kw>
 <kw name="Wait and Input Text" library="helpers">
 <arg>${login.CAMPO_SENHA}</arg>
 <arg>${PWD}</arg>
 <doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:52:37.859" endtime="20240115 17:52:37.859"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.736" endtime="20240115 19:45:35.736"/>
 </kw>
-<status status="NOT RUN" starttime="20240115 17:52:37.859" endtime="20240115 17:52:37.860"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.736" endtime="20240115 19:45:35.736"/>
 </branch>
 <branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Diamante I&quot;">
 <kw name="Wait and Input Text" library="helpers">
 <arg>${login.CAMPO_LOGIN}</arg>
 <arg>${DIAMANTE_1}</arg>
 <doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:52:37.860" endtime="20240115 17:52:37.860"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.736" endtime="20240115 19:45:35.736"/>
 </kw>
 <kw name="Wait and Input Text" library="helpers">
 <arg>${login.CAMPO_SENHA}</arg>
 <arg>${PWD}</arg>
 <doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:52:37.860" endtime="20240115 17:52:37.860"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.736" endtime="20240115 19:45:35.736"/>
 </kw>
-<status status="NOT RUN" starttime="20240115 17:52:37.860" endtime="20240115 17:52:37.860"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.736" endtime="20240115 19:45:35.736"/>
 </branch>
 <branch type="ELSE">
 <kw name="Wait and Input Text" library="helpers">
 <arg>${login.CAMPO_LOGIN}</arg>
 <arg>${TA+_1}</arg>
 <doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:52:37.860" endtime="20240115 17:52:37.860"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.737" endtime="20240115 19:45:35.737"/>
 </kw>
 <kw name="Wait and Input Text" library="helpers">
 <arg>${login.CAMPO_SENHA}</arg>
 <arg>${PWD}</arg>
 <doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:52:37.861" endtime="20240115 17:52:37.861"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.737" endtime="20240115 19:45:35.737"/>
 </kw>
-<status status="NOT RUN" starttime="20240115 17:52:37.860" endtime="20240115 17:52:37.861"/>
+<status status="NOT RUN" starttime="20240115 19:45:35.736" endtime="20240115 19:45:35.737"/>
 </branch>
-<status status="PASS" starttime="20240115 17:52:37.182" endtime="20240115 17:52:37.861"/>
+<status status="PASS" starttime="20240115 19:45:35.138" endtime="20240115 19:45:35.737"/>
 </if>
-<status status="PASS" starttime="20240115 17:52:36.958" endtime="20240115 17:52:37.861"/>
+<status status="PASS" starttime="20240115 19:45:34.881" endtime="20240115 19:45:35.737"/>
 </kw>
 <kw name="Wait and Click Element" library="helpers">
 <arg>${login.BTN_ENTRAR_TA}</arg>
@@ -172,50 +172,50 @@
 <arg>${ELEMENT}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:37.862" endtime="20240115 17:52:37.893"/>
+<status status="PASS" starttime="20240115 19:45:35.738" endtime="20240115 19:45:35.774"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:37.894" level="INFO">Clicking element '//*[text()='Entrar no TudoAzul']'.</msg>
-<status status="PASS" starttime="20240115 17:52:37.893" endtime="20240115 17:52:38.065"/>
+<msg timestamp="20240115 19:45:35.776" level="INFO">Clicking element '//*[text()='Entrar no TudoAzul']'.</msg>
+<status status="PASS" starttime="20240115 19:45:35.775" endtime="20240115 19:45:35.967"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:37.861" endtime="20240115 17:52:38.065"/>
+<status status="PASS" starttime="20240115 19:45:35.737" endtime="20240115 19:45:35.967"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:23.469" endtime="20240115 17:52:38.065"/>
+<status status="PASS" starttime="20240115 19:45:23.902" endtime="20240115 19:45:35.967"/>
 </kw>
 <kw name="Dado clico em comprar passagem" library="selecaovoos_resources">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Estamos carregando suas informações</arg>
 <arg>60</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:52:38.067" endtime="20240115 17:52:40.899"/>
+<status status="PASS" starttime="20240115 19:45:35.969" endtime="20240115 19:45:39.055"/>
 </kw>
 <kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
 <arg>Estamos carregando suas informações</arg>
 <arg>60</arg>
 <doc>Waits until ``text`` disappears from the current page.</doc>
-<status status="PASS" starttime="20240115 17:52:40.899" endtime="20240115 17:52:42.790"/>
+<status status="PASS" starttime="20240115 19:45:39.056" endtime="20240115 19:45:46.742"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${PRIMEIRO_NOME}</var>
 <arg>${login.LABEL_NOME}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:42.836" level="INFO">${PRIMEIRO_NOME} = roberto</msg>
-<status status="PASS" starttime="20240115 17:52:42.790" endtime="20240115 17:52:42.836"/>
+<msg timestamp="20240115 19:45:46.805" level="INFO">${PRIMEIRO_NOME} = roberto</msg>
+<status status="PASS" starttime="20240115 19:45:46.743" endtime="20240115 19:45:46.805"/>
 </kw>
 <kw name="Convert To Title Case" library="String">
 <var>${PRIMEIRO_NOME}</var>
 <arg>${PRIMEIRO_NOME}</arg>
 <doc>Converts string to title case.</doc>
-<msg timestamp="20240115 17:52:42.836" level="INFO">${PRIMEIRO_NOME} = Roberto</msg>
-<status status="PASS" starttime="20240115 17:52:42.836" endtime="20240115 17:52:42.836"/>
+<msg timestamp="20240115 19:45:46.806" level="INFO">${PRIMEIRO_NOME} = Roberto</msg>
+<status status="PASS" starttime="20240115 19:45:46.805" endtime="20240115 19:45:46.806"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${PRIMEIRO_NOME}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20240115 17:52:42.837" level="INFO">${PRIMEIRO_NOME} = Roberto</msg>
-<status status="PASS" starttime="20240115 17:52:42.836" endtime="20240115 17:52:42.837"/>
+<msg timestamp="20240115 19:45:46.806" level="INFO">${PRIMEIRO_NOME} = Roberto</msg>
+<status status="PASS" starttime="20240115 19:45:46.806" endtime="20240115 19:45:46.807"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${BOOL_BUSCA_VOOS}</var>
@@ -225,32 +225,32 @@
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${selecaovoos.VLD_SELECAODEVOOS}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<msg timestamp="20240115 17:52:48.646" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240115 17:52:48.646" level="FAIL">Element '//span[@aria-hidden='true'][contains(.,'Para onde vamos voar?')]' not visible after 5 seconds.</msg>
-<status status="FAIL" starttime="20240115 17:52:42.837" endtime="20240115 17:52:48.649"/>
+<msg timestamp="20240115 19:45:52.866" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240115 19:45:52.866" level="FAIL">Element '//span[@aria-hidden='true'][contains(.,'Para onde vamos voar?')]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20240115 19:45:46.807" endtime="20240115 19:45:52.869"/>
 </kw>
-<msg timestamp="20240115 17:52:48.649" level="INFO">${BOOL_BUSCA_VOOS} = False</msg>
-<status status="PASS" starttime="20240115 17:52:42.837" endtime="20240115 17:52:48.649"/>
+<msg timestamp="20240115 19:45:52.869" level="INFO">${BOOL_BUSCA_VOOS} = False</msg>
+<status status="PASS" starttime="20240115 19:45:46.807" endtime="20240115 19:45:52.869"/>
 </kw>
 <if>
 <branch type="IF" condition="${BOOL_BUSCA_VOOS} == False">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${selecaovoos.BTN_COMPRAR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:48.651" level="INFO">Clicking element '(//button[@aria-label='Comprar passagens'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:52:48.650" endtime="20240115 17:52:48.930"/>
+<msg timestamp="20240115 19:45:52.871" level="INFO">Clicking element '(//button[@aria-label='Comprar passagens'])[1]'.</msg>
+<status status="PASS" starttime="20240115 19:45:52.870" endtime="20240115 19:45:53.251"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:48.650" endtime="20240115 17:52:48.930"/>
+<status status="PASS" starttime="20240115 19:45:52.869" endtime="20240115 19:45:53.251"/>
 </branch>
-<status status="PASS" starttime="20240115 17:52:48.649" endtime="20240115 17:52:48.930"/>
+<status status="PASS" starttime="20240115 19:45:52.869" endtime="20240115 19:45:53.251"/>
 </if>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${selecaovoos.VLD_BTN_COMPRAR}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:48.930" endtime="20240115 17:52:49.223"/>
+<status status="PASS" starttime="20240115 19:45:53.252" endtime="20240115 19:45:53.371"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:38.067" endtime="20240115 17:52:49.223"/>
+<status status="PASS" starttime="20240115 19:45:35.969" endtime="20240115 19:45:53.372"/>
 </kw>
 <kw name="E inserir origem" library="selecaovoos_resources">
 <kw name="Wait and Input Text" library="helpers">
@@ -260,16 +260,16 @@
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:49.225" endtime="20240115 17:52:49.265"/>
+<status status="PASS" starttime="20240115 19:45:53.374" endtime="20240115 19:45:53.467"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <arg>${TEXT}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:49.268" level="INFO">Typing text 'VCP' into text field '//input[contains(@placeholder,'Digite a sua origem')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:49.265" endtime="20240115 17:52:49.541"/>
+<msg timestamp="20240115 19:45:53.469" level="INFO">Typing text 'VCP' into text field '//input[contains(@placeholder,'Digite a sua origem')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:53.467" endtime="20240115 19:45:53.755"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:49.224" endtime="20240115 17:52:49.541"/>
+<status status="PASS" starttime="20240115 19:45:53.373" endtime="20240115 19:45:53.756"/>
 </kw>
 <kw name="Wait and Click Element" library="helpers">
 <arg>${selecaovoos.VCP}</arg>
@@ -278,17 +278,17 @@
 <arg>${ELEMENT}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:49.545" endtime="20240115 17:52:50.061"/>
+<status status="PASS" starttime="20240115 19:45:53.758" endtime="20240115 19:45:54.240"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:50.062" level="INFO">Clicking element '//p[@class='button__text'][contains(.,'Campinas')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:50.061" endtime="20240115 17:52:50.255"/>
+<msg timestamp="20240115 19:45:54.241" level="INFO">Clicking element '//p[@class='button__text'][contains(.,'Campinas')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:54.240" endtime="20240115 19:45:54.375"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:49.542" endtime="20240115 17:52:50.255"/>
+<status status="PASS" starttime="20240115 19:45:53.756" endtime="20240115 19:45:54.375"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:49.224" endtime="20240115 17:52:50.255"/>
+<status status="PASS" starttime="20240115 19:45:53.372" endtime="20240115 19:45:54.376"/>
 </kw>
 <kw name="E inserir destino" library="selecaovoos_resources">
 <kw name="Wait and Input Text" library="helpers">
@@ -298,16 +298,16 @@
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:50.262" endtime="20240115 17:52:50.381"/>
+<status status="PASS" starttime="20240115 19:45:54.381" endtime="20240115 19:45:54.435"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <arg>${TEXT}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:50.383" level="INFO">Typing text 'BSB' into text field '//input[contains(@placeholder,'Digite o seu destino')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:50.382" endtime="20240115 17:52:50.548"/>
+<msg timestamp="20240115 19:45:54.436" level="INFO">Typing text 'BSB' into text field '//input[contains(@placeholder,'Digite o seu destino')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:54.435" endtime="20240115 19:45:54.587"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:50.260" endtime="20240115 17:52:50.548"/>
+<status status="PASS" starttime="20240115 19:45:54.379" endtime="20240115 19:45:54.587"/>
 </kw>
 <kw name="Wait and Click Element" library="helpers">
 <arg>${selecaovoos.BSB}</arg>
@@ -316,17 +316,17 @@
 <arg>${ELEMENT}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:50.551" endtime="20240115 17:52:50.595"/>
+<status status="PASS" starttime="20240115 19:45:54.588" endtime="20240115 19:45:54.640"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:50.595" level="INFO">Clicking element '//b[contains(.,'Brasília')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:50.595" endtime="20240115 17:52:50.716"/>
+<msg timestamp="20240115 19:45:54.640" level="INFO">Clicking element '//b[contains(.,'Brasília')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:54.640" endtime="20240115 19:45:54.769"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:50.549" endtime="20240115 17:52:50.716"/>
+<status status="PASS" starttime="20240115 19:45:54.587" endtime="20240115 19:45:54.769"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:50.259" endtime="20240115 17:52:50.716"/>
+<status status="PASS" starttime="20240115 19:45:54.378" endtime="20240115 19:45:54.769"/>
 </kw>
 <kw name="E inserir data ida" library="selecaovoos_resources">
 <kw name="Wait and Click Element" library="helpers">
@@ -336,34 +336,34 @@
 <arg>${ELEMENT}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:50.720" endtime="20240115 17:52:50.812"/>
+<status status="PASS" starttime="20240115 19:45:54.771" endtime="20240115 19:45:54.836"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:50.812" level="INFO">Clicking element '//label[@aria-label='Datas (ida e volta)'][contains(.,'Datas (ida e volta)')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:50.812" endtime="20240115 17:52:51.029"/>
+<msg timestamp="20240115 19:45:54.837" level="INFO">Clicking element '//label[@aria-label='Datas (ida e volta)'][contains(.,'Datas (ida e volta)')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:54.836" endtime="20240115 19:45:55.025"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:50.718" endtime="20240115 17:52:51.029"/>
+<status status="PASS" starttime="20240115 19:45:54.770" endtime="20240115 19:45:55.025"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${selecaovoos.DATA_DE_IDA}</arg>
 <arg>05/02/2024</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:51.031" level="INFO">Typing text '05/02/2024' into text field '//input[contains(@name,'startDate')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:51.029" endtime="20240115 17:52:52.579"/>
+<msg timestamp="20240115 19:45:55.028" level="INFO">Typing text '05/02/2024' into text field '//input[contains(@name,'startDate')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:55.026" endtime="20240115 19:45:56.859"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:50.717" endtime="20240115 17:52:52.580"/>
+<status status="PASS" starttime="20240115 19:45:54.770" endtime="20240115 19:45:56.859"/>
 </kw>
 <kw name="E inserir data volta" library="selecaovoos_resources">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${selecaovoos.DATA_DE_VOLTA}</arg>
 <arg>20/02/2024</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:52.582" level="INFO">Typing text '20/02/2024' into text field '//input[contains(@name,'endDate')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:52.581" endtime="20240115 17:52:53.540"/>
+<msg timestamp="20240115 19:45:56.862" level="INFO">Typing text '20/02/2024' into text field '//input[contains(@name,'endDate')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:56.860" endtime="20240115 19:45:57.827"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:52.580" endtime="20240115 17:52:53.540"/>
+<status status="PASS" starttime="20240115 19:45:56.859" endtime="20240115 19:45:57.827"/>
 </kw>
 <kw name="Quando confirma seleção de data" library="selecaovoos_resources">
 <kw name="Wait and Click Element" library="helpers">
@@ -374,17 +374,17 @@
 <arg>${ELEMENT}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:53.542" endtime="20240115 17:52:53.592"/>
+<status status="PASS" starttime="20240115 19:45:57.830" endtime="20240115 19:45:57.904"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:53.593" level="INFO">Clicking element '//div[@class='button__text'][contains(.,'Selecionar data de ida e volta')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:53.593" endtime="20240115 17:52:53.752"/>
+<msg timestamp="20240115 19:45:57.905" level="INFO">Clicking element '//div[@class='button__text'][contains(.,'Selecionar data de ida e volta')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:57.905" endtime="20240115 19:45:58.050"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:53.541" endtime="20240115 17:52:53.752"/>
+<status status="PASS" starttime="20240115 19:45:57.828" endtime="20240115 19:45:58.050"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:53.541" endtime="20240115 17:52:53.752"/>
+<status status="PASS" starttime="20240115 19:45:57.828" endtime="20240115 19:45:58.050"/>
 </kw>
 <kw name="E clicar em buscar passagens" library="selecaovoos_resources">
 <kw name="Wait and Click Element" library="helpers">
@@ -395,2815 +395,55 @@
 <arg>${ELEMENT}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:52:53.757" endtime="20240115 17:52:53.852"/>
+<status status="PASS" starttime="20240115 19:45:58.059" endtime="20240115 19:45:58.151"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ELEMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:52:53.853" level="INFO">Clicking element '//div[@class='button__text'][contains(.,'Buscar passagens')]'.</msg>
-<status status="PASS" starttime="20240115 17:52:53.852" endtime="20240115 17:52:54.241"/>
+<msg timestamp="20240115 19:45:58.152" level="INFO">Clicking element '//div[@class='button__text'][contains(.,'Buscar passagens')]'.</msg>
+<status status="PASS" starttime="20240115 19:45:58.151" endtime="20240115 19:45:58.441"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:53.754" endtime="20240115 17:52:54.241"/>
+<status status="PASS" starttime="20240115 19:45:58.058" endtime="20240115 19:45:58.441"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:53.753" endtime="20240115 17:52:54.241"/>
+<status status="PASS" starttime="20240115 19:45:58.057" endtime="20240115 19:45:58.441"/>
 </kw>
 <kw name="Então o site devera exibir a lista de voos" library="selecaovoos_resources">
 <kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
 <arg>Estamos esquentando as turbinas</arg>
 <arg>40</arg>
 <doc>Waits until ``text`` disappears from the current page.</doc>
-<status status="PASS" starttime="20240115 17:52:54.257" endtime="20240115 17:52:54.300"/>
+<status status="PASS" starttime="20240115 19:45:58.442" endtime="20240115 19:45:58.507"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Olá ${PRIMEIRO_NOME}, esse é o resultado de sua busca.</arg>
 <arg>30</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:52:54.300" endtime="20240115 17:52:55.501"/>
+<status status="PASS" starttime="20240115 19:45:58.507" endtime="20240115 19:45:59.796"/>
 </kw>
-<status status="PASS" starttime="20240115 17:52:54.257" endtime="20240115 17:52:55.501"/>
+<status status="PASS" starttime="20240115 19:45:58.442" endtime="20240115 19:45:59.796"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240115 17:52:55.506" endtime="20240115 17:52:58.477"/>
+<status status="PASS" starttime="20240115 19:45:59.798" endtime="20240115 19:46:02.236"/>
 </kw>
 <doc>Esse caso de teste serve para efetuar o booking no site</doc>
 <tag>BOOKING</tag>
 <tag>t1</tag>
-<status status="PASS" starttime="20240115 17:52:23.468" endtime="20240115 17:52:58.478"/>
-</test>
-<test id="s1-t2" name="Caso de Testes 02 - Selecionar Passagens e Prosseguir para Viajantes" line="26">
-<kw name="inicia o teste com login" library="setup_teardown" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL_STG}</arg>
-<arg>${Browser}</arg>
-<arg>options=add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--safebrowsing-disable-download-protection");add_argument("--disable-web-security")</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240115 17:52:58.487" level="INFO">Opening browser 'Chrome' to base url 'https://azul-stage65.adobecqms.net/br/pt/home'.</msg>
-<status status="PASS" starttime="20240115 17:52:58.485" endtime="20240115 17:53:01.638"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240115 17:53:01.638" endtime="20240115 17:53:04.775"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${login.BTN_LOGIN}</arg>
-<arg>50</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:04.777" endtime="20240115 17:53:07.322"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:07.324" level="INFO">Clicking element '(//span[text()='Fazer Login'])[2]'.</msg>
-<status status="PASS" starttime="20240115 17:53:07.322" endtime="20240115 17:53:09.003"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:04.776" endtime="20240115 17:53:09.005"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${login.VLD_TELA_LOGIN}</arg>
-<arg>20</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:09.005" endtime="20240115 17:53:09.892"/>
-</kw>
-<kw name="realiza o login" library="helpers">
-<arg>USER=${USER}</arg>
-<doc>Keyword responsável por fazer o Login no app, a partir da página inicial.</doc>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>TIMEOUT=20</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:09.895" endtime="20240115 17:53:10.067"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:10.068" level="INFO">Clicking element '//input[contains(@aria-label,'Informe CPF ou Nº TudoAzul')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:10.067" endtime="20240115 17:53:10.400"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:09.893" endtime="20240115 17:53:10.400"/>
-</kw>
-<if>
-<branch type="IF" condition="&quot;${USER}&quot; == &quot;Tudo Azul&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${TA_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:10.402" endtime="20240115 17:53:10.491"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:10.492" level="INFO">Typing text '18124874360' into text field '//input[contains(@aria-label,'Informe CPF ou Nº TudoAzul')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:10.492" endtime="20240115 17:53:10.795"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:10.400" endtime="20240115 17:53:10.795"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:10.797" endtime="20240115 17:53:10.835"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:10.836" level="INFO">Typing text 'Azul2023**' into text field '//input[contains(@type,'password')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:10.835" endtime="20240115 17:53:11.053"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:10.795" endtime="20240115 17:53:11.053"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:10.400" endtime="20240115 17:53:11.053"/>
-</branch>
-<branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Tudo Azul II&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${TA_2}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:53:11.053" endtime="20240115 17:53:11.053"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:53:11.053" endtime="20240115 17:53:11.054"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:53:11.053" endtime="20240115 17:53:11.054"/>
-</branch>
-<branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Safira I&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${SAFIRA_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:53:11.054" endtime="20240115 17:53:11.054"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:53:11.054" endtime="20240115 17:53:11.054"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:53:11.054" endtime="20240115 17:53:11.054"/>
-</branch>
-<branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Diamante I&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${DIAMANTE_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:53:11.055" endtime="20240115 17:53:11.055"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:53:11.056" endtime="20240115 17:53:11.056"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:53:11.054" endtime="20240115 17:53:11.056"/>
-</branch>
-<branch type="ELSE">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${TA+_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:53:11.057" endtime="20240115 17:53:11.057"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:53:11.057" endtime="20240115 17:53:11.057"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:53:11.056" endtime="20240115 17:53:11.057"/>
-</branch>
-<status status="PASS" starttime="20240115 17:53:10.400" endtime="20240115 17:53:11.057"/>
-</if>
-<status status="PASS" starttime="20240115 17:53:09.892" endtime="20240115 17:53:11.058"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${login.BTN_ENTRAR_TA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:11.059" endtime="20240115 17:53:11.093"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:11.094" level="INFO">Clicking element '//*[text()='Entrar no TudoAzul']'.</msg>
-<status status="PASS" starttime="20240115 17:53:11.093" endtime="20240115 17:53:11.252"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:11.058" endtime="20240115 17:53:11.253"/>
-</kw>
-<status status="PASS" starttime="20240115 17:52:58.484" endtime="20240115 17:53:11.253"/>
-</kw>
-<kw name="Dado que eu esteja na tela de seleção de passagens" library="selecaopassagens_resources">
-<kw name="clico em comprar passagem" library="selecaovoos_resources">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Estamos carregando suas informações</arg>
-<arg>60</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:53:11.255" endtime="20240115 17:53:18.489"/>
-</kw>
-<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
-<arg>Estamos carregando suas informações</arg>
-<arg>60</arg>
-<doc>Waits until ``text`` disappears from the current page.</doc>
-<status status="PASS" starttime="20240115 17:53:18.489" endtime="20240115 17:53:20.345"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${PRIMEIRO_NOME}</var>
-<arg>${login.LABEL_NOME}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:20.458" level="INFO">${PRIMEIRO_NOME} = roberto</msg>
-<status status="PASS" starttime="20240115 17:53:20.345" endtime="20240115 17:53:20.458"/>
-</kw>
-<kw name="Convert To Title Case" library="String">
-<var>${PRIMEIRO_NOME}</var>
-<arg>${PRIMEIRO_NOME}</arg>
-<doc>Converts string to title case.</doc>
-<msg timestamp="20240115 17:53:20.459" level="INFO">${PRIMEIRO_NOME} = Roberto</msg>
-<status status="PASS" starttime="20240115 17:53:20.458" endtime="20240115 17:53:20.459"/>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${PRIMEIRO_NOME}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20240115 17:53:20.460" level="INFO">${PRIMEIRO_NOME} = Roberto</msg>
-<status status="PASS" starttime="20240115 17:53:20.459" endtime="20240115 17:53:20.460"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${BOOL_BUSCA_VOOS}</var>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${selecaovoos.VLD_SELECAODEVOOS}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaovoos.VLD_SELECAODEVOOS}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<msg timestamp="20240115 17:53:26.451" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240115 17:53:26.451" level="FAIL">Element '//span[@aria-hidden='true'][contains(.,'Para onde vamos voar?')]' not visible after 5 seconds.</msg>
-<status status="FAIL" starttime="20240115 17:53:20.461" endtime="20240115 17:53:26.452"/>
-</kw>
-<msg timestamp="20240115 17:53:26.452" level="INFO">${BOOL_BUSCA_VOOS} = False</msg>
-<status status="PASS" starttime="20240115 17:53:20.460" endtime="20240115 17:53:26.452"/>
-</kw>
-<if>
-<branch type="IF" condition="${BOOL_BUSCA_VOOS} == False">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${selecaovoos.BTN_COMPRAR}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:26.454" level="INFO">Clicking element '(//button[@aria-label='Comprar passagens'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:53:26.453" endtime="20240115 17:53:26.799"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:26.452" endtime="20240115 17:53:26.799"/>
-</branch>
-<status status="PASS" starttime="20240115 17:53:26.452" endtime="20240115 17:53:26.799"/>
-</if>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaovoos.VLD_BTN_COMPRAR}</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:26.799" endtime="20240115 17:53:27.002"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:11.254" endtime="20240115 17:53:27.002"/>
-</kw>
-<kw name="inserir origem" library="selecaovoos_resources">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${selecaovoos.ORIGEM}</arg>
-<arg>VCP</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:27.004" endtime="20240115 17:53:27.051"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:27.052" level="INFO">Typing text 'VCP' into text field '//input[contains(@placeholder,'Digite a sua origem')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:27.051" endtime="20240115 17:53:27.351"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:27.002" endtime="20240115 17:53:27.351"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.VCP}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:27.353" endtime="20240115 17:53:27.843"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:27.844" level="INFO">Clicking element '//p[@class='button__text'][contains(.,'Campinas')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:27.843" endtime="20240115 17:53:28.042"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:27.351" endtime="20240115 17:53:28.043"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:27.002" endtime="20240115 17:53:28.044"/>
-</kw>
-<kw name="inserir destino" library="selecaovoos_resources">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${selecaovoos.DESTINO}</arg>
-<arg>BSB</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:28.046" endtime="20240115 17:53:28.102"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:28.103" level="INFO">Typing text 'BSB' into text field '//input[contains(@placeholder,'Digite o seu destino')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:28.102" endtime="20240115 17:53:28.330"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:28.044" endtime="20240115 17:53:28.330"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.BSB}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:28.332" endtime="20240115 17:53:28.387"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:28.387" level="INFO">Clicking element '//b[contains(.,'Brasília')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:28.387" endtime="20240115 17:53:28.517"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:28.331" endtime="20240115 17:53:28.517"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:28.044" endtime="20240115 17:53:28.517"/>
-</kw>
-<kw name="inserir data ida" library="selecaovoos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.DATA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:28.518" endtime="20240115 17:53:28.562"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:28.562" level="INFO">Clicking element '//label[@aria-label='Datas (ida e volta)'][contains(.,'Datas (ida e volta)')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:28.562" endtime="20240115 17:53:28.738"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:28.518" endtime="20240115 17:53:28.738"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${selecaovoos.DATA_DE_IDA}</arg>
-<arg>05/02/2024</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:28.740" level="INFO">Typing text '05/02/2024' into text field '//input[contains(@name,'startDate')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:28.738" endtime="20240115 17:53:30.256"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:28.517" endtime="20240115 17:53:30.256"/>
-</kw>
-<kw name="inserir data volta" library="selecaovoos_resources">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${selecaovoos.DATA_DE_VOLTA}</arg>
-<arg>20/02/2024</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:30.258" level="INFO">Typing text '20/02/2024' into text field '//input[contains(@name,'endDate')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:30.256" endtime="20240115 17:53:31.078"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:30.256" endtime="20240115 17:53:31.078"/>
-</kw>
-<kw name="confirma seleção de data" library="selecaovoos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.BTN_SELECIONA_DATA}</arg>
-<arg>10</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:31.080" endtime="20240115 17:53:31.146"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:31.147" level="INFO">Clicking element '//div[@class='button__text'][contains(.,'Selecionar data de ida e volta')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:31.147" endtime="20240115 17:53:31.274"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:31.079" endtime="20240115 17:53:31.274"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:31.078" endtime="20240115 17:53:31.275"/>
-</kw>
-<kw name="clicar em buscar passagens" library="selecaovoos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.BTN_BUSCAR_PASSAGENS}</arg>
-<arg>40</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:31.278" endtime="20240115 17:53:31.308"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:31.310" level="INFO">Clicking element '//div[@class='button__text'][contains(.,'Buscar passagens')]'.</msg>
-<status status="PASS" starttime="20240115 17:53:31.309" endtime="20240115 17:53:31.680"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:31.275" endtime="20240115 17:53:31.680"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:31.275" endtime="20240115 17:53:31.680"/>
-</kw>
-<kw name="o site devera exibir a lista de voos" library="selecaovoos_resources">
-<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
-<arg>Estamos esquentando as turbinas</arg>
-<arg>40</arg>
-<doc>Waits until ``text`` disappears from the current page.</doc>
-<status status="PASS" starttime="20240115 17:53:31.681" endtime="20240115 17:53:31.734"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Olá ${PRIMEIRO_NOME}, esse é o resultado de sua busca.</arg>
-<arg>30</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:53:31.734" endtime="20240115 17:53:32.947"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:31.681" endtime="20240115 17:53:32.947"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:11.254" endtime="20240115 17:53:32.947"/>
-</kw>
-<kw name="Quando eu selecionar as tarifas de ida e volta" library="selecaopassagens_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.SLC_VIAGEM_IDA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:32.959" endtime="20240115 17:53:38.730"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:38.731" level="INFO">Clicking element '(//div[@aria-label='Ver tarifas deste voo. Selecionar'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:53:38.730" endtime="20240115 17:53:39.275"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:32.957" endtime="20240115 17:53:39.275"/>
-</kw>
-<while condition="True">
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Click Element</arg>
-<arg>${selecaopassagens.BTN_SLC_TRF_IDA}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${selecaopassagens.BTN_SLC_TRF_IDA}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:39.278" level="INFO">Clicking element '(//button[@aria-label='Selecionar tarifa'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:53:39.277" endtime="20240115 17:53:41.637"/>
-</kw>
-<msg timestamp="20240115 17:53:41.637" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20240115 17:53:39.276" endtime="20240115 17:53:41.638"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="PASS" starttime="20240115 17:53:41.638" endtime="20240115 17:53:41.638"/>
-</break>
-<status status="PASS" starttime="20240115 17:53:41.638" endtime="20240115 17:53:41.638"/>
-</branch>
-<status status="PASS" starttime="20240115 17:53:41.638" endtime="20240115 17:53:41.638"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_UP</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240115 17:53:41.638" endtime="20240115 17:53:41.639"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:39.276" endtime="20240115 17:53:41.639"/>
-</iter>
-<status status="PASS" starttime="20240115 17:53:39.276" endtime="20240115 17:53:41.639"/>
-</while>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.SLC_VIAGEM_VOLTA}</arg>
-<arg>10</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:41.641" endtime="20240115 17:53:42.068"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:42.070" level="INFO">Clicking element '(//div[@aria-label='Ver tarifas deste voo. Selecionar'])[2]'.</msg>
-<status status="PASS" starttime="20240115 17:53:42.068" endtime="20240115 17:53:42.580"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:41.639" endtime="20240115 17:53:42.580"/>
-</kw>
-<while condition="True">
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Wait and Click Element</arg>
-<arg>${selecaopassagens.BTN_SLC_TRF_VOLTA}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.BTN_SLC_TRF_VOLTA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:42.584" endtime="20240115 17:53:43.155"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:43.157" level="INFO">Clicking element '(//button[contains(.,'Selecionar tarifaSelecionar tarifa')])[4]'.</msg>
-<status status="PASS" starttime="20240115 17:53:43.156" endtime="20240115 17:53:43.730"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:42.582" endtime="20240115 17:53:43.730"/>
-</kw>
-<msg timestamp="20240115 17:53:43.730" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20240115 17:53:42.581" endtime="20240115 17:53:43.730"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="PASS" starttime="20240115 17:53:43.731" endtime="20240115 17:53:43.731"/>
-</break>
-<status status="PASS" starttime="20240115 17:53:43.731" endtime="20240115 17:53:43.731"/>
-</branch>
-<status status="PASS" starttime="20240115 17:53:43.731" endtime="20240115 17:53:43.731"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_UP</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240115 17:53:43.731" endtime="20240115 17:53:43.732"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:42.581" endtime="20240115 17:53:43.732"/>
-</iter>
-<status status="PASS" starttime="20240115 17:53:42.581" endtime="20240115 17:53:43.732"/>
-</while>
-<status status="PASS" starttime="20240115 17:53:32.956" endtime="20240115 17:53:43.732"/>
-</kw>
-<kw name="E clicar em prosseguir para pagamento" library="selecaopassagens_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.BTN_PSG_PGTO}</arg>
-<arg>30</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:43.738" endtime="20240115 17:53:44.029"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:53:44.029" level="INFO">Clicking element '(//button[@aria-label='Prosseguir para pagamento. Selecionar'])[2]'.</msg>
-<status status="PASS" starttime="20240115 17:53:44.029" endtime="20240115 17:53:44.707"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:43.736" endtime="20240115 17:53:44.707"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Carregando informações</arg>
-<arg>40</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:53:44.708" endtime="20240115 17:53:44.759"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaopassagens.VLD_MODAL_PGTO}</arg>
-<arg>40</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:53:44.759" endtime="20240115 17:54:01.581"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${selecaopassagens.BTN_MODAL_PGTO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:01.582" level="INFO">Clicking element '(//*[text()='Não, obrigado!'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:54:01.582" endtime="20240115 17:54:01.965"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Carregando informações</arg>
-<arg>40</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:54:01.965" endtime="20240115 17:54:02.068"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaopassagens.VLD_MODAL_1CLIQUE}</arg>
-<arg>20</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:02.068" endtime="20240115 17:54:07.252"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.BTN_PGTO_1CLIQUE}</arg>
-<arg>10</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:07.253" endtime="20240115 17:54:07.302"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:07.302" level="INFO">Clicking element '(//div[text()='Não quero pagar com 1-clique'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:54:07.302" endtime="20240115 17:54:07.698"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:07.252" endtime="20240115 17:54:07.698"/>
-</kw>
-<status status="PASS" starttime="20240115 17:53:43.735" endtime="20240115 17:54:07.698"/>
-</kw>
-<kw name="Então o sistema devera prosseguir para a tela de viajantes" library="viajantes_resources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${viajantes.TELA_VIAJANTES}</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:07.699" endtime="20240115 17:54:11.563"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${viajantes.BTN_PSG_PGTO_VIAJANTES}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:11.565" endtime="20240115 17:54:14.059"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:14.060" level="INFO">Clicking element '(//div[text()='Prosseguir para pagamento'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:54:14.059" endtime="20240115 17:54:14.400"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:11.564" endtime="20240115 17:54:14.400"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:07.699" endtime="20240115 17:54:14.400"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240115 17:54:14.404" endtime="20240115 17:54:16.913"/>
-</kw>
-<doc>Esse caso de teste serve para selecionar as tarifas em REAIS</doc>
-<tag>SELECIONAR TARIFA</tag>
-<tag>t2</tag>
-<status status="PASS" starttime="20240115 17:52:58.482" endtime="20240115 17:54:16.915"/>
-</test>
-<test id="s1-t3" name="Caso de Testes 03 - Validar a inserção de Cartão de Crédito" line="36">
-<kw name="inicia o teste com login" library="setup_teardown" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL_STG}</arg>
-<arg>${Browser}</arg>
-<arg>options=add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--safebrowsing-disable-download-protection");add_argument("--disable-web-security")</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240115 17:54:16.936" level="INFO">Opening browser 'Chrome' to base url 'https://azul-stage65.adobecqms.net/br/pt/home'.</msg>
-<status status="PASS" starttime="20240115 17:54:16.932" endtime="20240115 17:54:25.954"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240115 17:54:25.955" endtime="20240115 17:54:26.196"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${login.BTN_LOGIN}</arg>
-<arg>50</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:26.207" endtime="20240115 17:54:28.697"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:28.699" level="INFO">Clicking element '(//span[text()='Fazer Login'])[2]'.</msg>
-<status status="PASS" starttime="20240115 17:54:28.697" endtime="20240115 17:54:29.777"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:26.201" endtime="20240115 17:54:29.777"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${login.VLD_TELA_LOGIN}</arg>
-<arg>20</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:29.778" endtime="20240115 17:54:33.292"/>
-</kw>
-<kw name="realiza o login" library="helpers">
-<arg>USER=${USER}</arg>
-<doc>Keyword responsável por fazer o Login no app, a partir da página inicial.</doc>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>TIMEOUT=20</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:33.295" endtime="20240115 17:54:33.344"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:33.346" level="INFO">Clicking element '//input[contains(@aria-label,'Informe CPF ou Nº TudoAzul')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:33.345" endtime="20240115 17:54:33.550"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:33.293" endtime="20240115 17:54:33.550"/>
-</kw>
-<if>
-<branch type="IF" condition="&quot;${USER}&quot; == &quot;Tudo Azul&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${TA_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:33.554" endtime="20240115 17:54:33.590"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:33.592" level="INFO">Typing text '18124874360' into text field '//input[contains(@aria-label,'Informe CPF ou Nº TudoAzul')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:33.591" endtime="20240115 17:54:34.137"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:33.551" endtime="20240115 17:54:34.137"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:34.139" endtime="20240115 17:54:34.375"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:34.376" level="INFO">Typing text 'Azul2023**' into text field '//input[contains(@type,'password')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:34.376" endtime="20240115 17:54:34.598"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:34.137" endtime="20240115 17:54:34.598"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:33.551" endtime="20240115 17:54:34.598"/>
-</branch>
-<branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Tudo Azul II&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${TA_2}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:54:34.599" endtime="20240115 17:54:34.599"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:54:34.599" endtime="20240115 17:54:34.599"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:54:34.598" endtime="20240115 17:54:34.599"/>
-</branch>
-<branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Safira I&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${SAFIRA_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:54:34.600" endtime="20240115 17:54:34.600"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:54:34.600" endtime="20240115 17:54:34.600"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:54:34.599" endtime="20240115 17:54:34.601"/>
-</branch>
-<branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Diamante I&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${DIAMANTE_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:54:34.601" endtime="20240115 17:54:34.601"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:54:34.601" endtime="20240115 17:54:34.601"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:54:34.601" endtime="20240115 17:54:34.601"/>
-</branch>
-<branch type="ELSE">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${TA+_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:54:34.602" endtime="20240115 17:54:34.602"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:54:34.602" endtime="20240115 17:54:34.602"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:54:34.601" endtime="20240115 17:54:34.602"/>
-</branch>
-<status status="PASS" starttime="20240115 17:54:33.551" endtime="20240115 17:54:34.602"/>
-</if>
-<status status="PASS" starttime="20240115 17:54:33.293" endtime="20240115 17:54:34.602"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${login.BTN_ENTRAR_TA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:34.604" endtime="20240115 17:54:34.680"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:34.682" level="INFO">Clicking element '//*[text()='Entrar no TudoAzul']'.</msg>
-<status status="PASS" starttime="20240115 17:54:34.681" endtime="20240115 17:54:34.978"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:34.602" endtime="20240115 17:54:34.979"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:16.929" endtime="20240115 17:54:34.979"/>
-</kw>
-<kw name="Dado que eu esteja na tela de seleção de passagens" library="selecaopassagens_resources">
-<kw name="clico em comprar passagem" library="selecaovoos_resources">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Estamos carregando suas informações</arg>
-<arg>60</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:54:34.983" endtime="20240115 17:54:37.706"/>
-</kw>
-<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
-<arg>Estamos carregando suas informações</arg>
-<arg>60</arg>
-<doc>Waits until ``text`` disappears from the current page.</doc>
-<status status="PASS" starttime="20240115 17:54:37.706" endtime="20240115 17:54:38.701"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${PRIMEIRO_NOME}</var>
-<arg>${login.LABEL_NOME}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:38.886" level="INFO">${PRIMEIRO_NOME} = roberto</msg>
-<status status="PASS" starttime="20240115 17:54:38.701" endtime="20240115 17:54:38.886"/>
-</kw>
-<kw name="Convert To Title Case" library="String">
-<var>${PRIMEIRO_NOME}</var>
-<arg>${PRIMEIRO_NOME}</arg>
-<doc>Converts string to title case.</doc>
-<msg timestamp="20240115 17:54:38.886" level="INFO">${PRIMEIRO_NOME} = Roberto</msg>
-<status status="PASS" starttime="20240115 17:54:38.886" endtime="20240115 17:54:38.886"/>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${PRIMEIRO_NOME}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20240115 17:54:38.887" level="INFO">${PRIMEIRO_NOME} = Roberto</msg>
-<status status="PASS" starttime="20240115 17:54:38.887" endtime="20240115 17:54:38.887"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${BOOL_BUSCA_VOOS}</var>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${selecaovoos.VLD_SELECAODEVOOS}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaovoos.VLD_SELECAODEVOOS}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<msg timestamp="20240115 17:54:44.860" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240115 17:54:44.860" level="FAIL">Element '//span[@aria-hidden='true'][contains(.,'Para onde vamos voar?')]' not visible after 5 seconds.</msg>
-<status status="FAIL" starttime="20240115 17:54:38.887" endtime="20240115 17:54:44.861"/>
-</kw>
-<msg timestamp="20240115 17:54:44.861" level="INFO">${BOOL_BUSCA_VOOS} = False</msg>
-<status status="PASS" starttime="20240115 17:54:38.887" endtime="20240115 17:54:44.861"/>
-</kw>
-<if>
-<branch type="IF" condition="${BOOL_BUSCA_VOOS} == False">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${selecaovoos.BTN_COMPRAR}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:44.863" level="INFO">Clicking element '(//button[@aria-label='Comprar passagens'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:54:44.862" endtime="20240115 17:54:45.181"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:44.861" endtime="20240115 17:54:45.181"/>
-</branch>
-<status status="PASS" starttime="20240115 17:54:44.861" endtime="20240115 17:54:45.181"/>
-</if>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaovoos.VLD_BTN_COMPRAR}</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:45.181" endtime="20240115 17:54:45.262"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:34.983" endtime="20240115 17:54:45.262"/>
-</kw>
-<kw name="inserir origem" library="selecaovoos_resources">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${selecaovoos.ORIGEM}</arg>
-<arg>VCP</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:45.264" endtime="20240115 17:54:45.324"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:45.325" level="INFO">Typing text 'VCP' into text field '//input[contains(@placeholder,'Digite a sua origem')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:45.325" endtime="20240115 17:54:45.641"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:45.262" endtime="20240115 17:54:45.641"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.VCP}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:45.643" endtime="20240115 17:54:46.108"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:46.109" level="INFO">Clicking element '//p[@class='button__text'][contains(.,'Campinas')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:46.109" endtime="20240115 17:54:46.274"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:45.641" endtime="20240115 17:54:46.274"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:45.262" endtime="20240115 17:54:46.274"/>
-</kw>
-<kw name="inserir destino" library="selecaovoos_resources">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${selecaovoos.DESTINO}</arg>
-<arg>BSB</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:46.277" endtime="20240115 17:54:46.328"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:46.329" level="INFO">Typing text 'BSB' into text field '//input[contains(@placeholder,'Digite o seu destino')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:46.329" endtime="20240115 17:54:46.506"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:46.275" endtime="20240115 17:54:46.506"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.BSB}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:46.507" endtime="20240115 17:54:46.556"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:46.557" level="INFO">Clicking element '//b[contains(.,'Brasília')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:46.556" endtime="20240115 17:54:46.993"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:46.506" endtime="20240115 17:54:46.993"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:46.274" endtime="20240115 17:54:46.993"/>
-</kw>
-<kw name="inserir data ida" library="selecaovoos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.DATA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:46.996" endtime="20240115 17:54:47.509"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:47.510" level="INFO">Clicking element '//label[@aria-label='Datas (ida e volta)'][contains(.,'Datas (ida e volta)')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:47.509" endtime="20240115 17:54:48.010"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:46.994" endtime="20240115 17:54:48.010"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${selecaovoos.DATA_DE_IDA}</arg>
-<arg>05/02/2024</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:48.013" level="INFO">Typing text '05/02/2024' into text field '//input[contains(@name,'startDate')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:48.010" endtime="20240115 17:54:51.511"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:46.993" endtime="20240115 17:54:51.512"/>
-</kw>
-<kw name="inserir data volta" library="selecaovoos_resources">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${selecaovoos.DATA_DE_VOLTA}</arg>
-<arg>20/02/2024</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:51.513" level="INFO">Typing text '20/02/2024' into text field '//input[contains(@name,'endDate')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:51.512" endtime="20240115 17:54:52.757"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:51.512" endtime="20240115 17:54:52.758"/>
-</kw>
-<kw name="confirma seleção de data" library="selecaovoos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.BTN_SELECIONA_DATA}</arg>
-<arg>10</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:52.760" endtime="20240115 17:54:52.803"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:52.804" level="INFO">Clicking element '//div[@class='button__text'][contains(.,'Selecionar data de ida e volta')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:52.803" endtime="20240115 17:54:52.998"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:52.758" endtime="20240115 17:54:52.998"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:52.758" endtime="20240115 17:54:52.998"/>
-</kw>
-<kw name="clicar em buscar passagens" library="selecaovoos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.BTN_BUSCAR_PASSAGENS}</arg>
-<arg>40</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:53.000" endtime="20240115 17:54:53.129"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:54:53.129" level="INFO">Clicking element '//div[@class='button__text'][contains(.,'Buscar passagens')]'.</msg>
-<status status="PASS" starttime="20240115 17:54:53.129" endtime="20240115 17:54:53.643"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:52.999" endtime="20240115 17:54:53.643"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:52.998" endtime="20240115 17:54:53.643"/>
-</kw>
-<kw name="o site devera exibir a lista de voos" library="selecaovoos_resources">
-<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
-<arg>Estamos esquentando as turbinas</arg>
-<arg>40</arg>
-<doc>Waits until ``text`` disappears from the current page.</doc>
-<status status="PASS" starttime="20240115 17:54:53.644" endtime="20240115 17:54:53.740"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Olá ${PRIMEIRO_NOME}, esse é o resultado de sua busca.</arg>
-<arg>30</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:54:53.741" endtime="20240115 17:54:56.134"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:53.644" endtime="20240115 17:54:56.135"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:34.982" endtime="20240115 17:54:56.135"/>
-</kw>
-<kw name="E eu selecionar as tarifas de ida e volta" library="selecaopassagens_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.SLC_VIAGEM_IDA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:54:56.221" endtime="20240115 17:55:02.191"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:55:02.192" level="INFO">Clicking element '(//div[@aria-label='Ver tarifas deste voo. Selecionar'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:55:02.191" endtime="20240115 17:55:02.870"/>
-</kw>
-<status status="PASS" starttime="20240115 17:54:56.217" endtime="20240115 17:55:02.871"/>
-</kw>
-<while condition="True">
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Click Element</arg>
-<arg>${selecaopassagens.BTN_SLC_TRF_IDA}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${selecaopassagens.BTN_SLC_TRF_IDA}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:55:02.874" level="INFO">Clicking element '(//button[@aria-label='Selecionar tarifa'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:55:02.872" endtime="20240115 17:55:04.752"/>
-</kw>
-<msg timestamp="20240115 17:55:04.752" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20240115 17:55:02.871" endtime="20240115 17:55:04.752"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="PASS" starttime="20240115 17:55:04.753" endtime="20240115 17:55:04.753"/>
-</break>
-<status status="PASS" starttime="20240115 17:55:04.752" endtime="20240115 17:55:04.753"/>
-</branch>
-<status status="PASS" starttime="20240115 17:55:04.752" endtime="20240115 17:55:04.753"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_UP</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240115 17:55:04.754" endtime="20240115 17:55:04.755"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:02.871" endtime="20240115 17:55:04.755"/>
-</iter>
-<status status="PASS" starttime="20240115 17:55:02.871" endtime="20240115 17:55:04.755"/>
-</while>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.SLC_VIAGEM_VOLTA}</arg>
-<arg>10</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:55:04.759" endtime="20240115 17:55:05.117"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:55:05.119" level="INFO">Clicking element '(//div[@aria-label='Ver tarifas deste voo. Selecionar'])[2]'.</msg>
-<status status="PASS" starttime="20240115 17:55:05.118" endtime="20240115 17:55:05.431"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:04.755" endtime="20240115 17:55:05.432"/>
-</kw>
-<while condition="True">
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Wait and Click Element</arg>
-<arg>${selecaopassagens.BTN_SLC_TRF_VOLTA}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.BTN_SLC_TRF_VOLTA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:55:05.434" endtime="20240115 17:55:05.702"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:55:05.706" level="INFO">Clicking element '(//button[contains(.,'Selecionar tarifaSelecionar tarifa')])[4]'.</msg>
-<status status="PASS" starttime="20240115 17:55:05.702" endtime="20240115 17:55:06.328"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:05.432" endtime="20240115 17:55:06.328"/>
-</kw>
-<msg timestamp="20240115 17:55:06.328" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20240115 17:55:05.432" endtime="20240115 17:55:06.328"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="PASS" starttime="20240115 17:55:06.329" endtime="20240115 17:55:06.329"/>
-</break>
-<status status="PASS" starttime="20240115 17:55:06.329" endtime="20240115 17:55:06.329"/>
-</branch>
-<status status="PASS" starttime="20240115 17:55:06.329" endtime="20240115 17:55:06.329"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_UP</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240115 17:55:06.329" endtime="20240115 17:55:06.329"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:05.432" endtime="20240115 17:55:06.329"/>
-</iter>
-<status status="PASS" starttime="20240115 17:55:05.432" endtime="20240115 17:55:06.329"/>
-</while>
-<status status="PASS" starttime="20240115 17:54:56.213" endtime="20240115 17:55:06.329"/>
-</kw>
-<kw name="E clicar em prosseguir para pagamento" library="selecaopassagens_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.BTN_PSG_PGTO}</arg>
-<arg>30</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:55:06.348" endtime="20240115 17:55:07.150"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:55:07.151" level="INFO">Clicking element '(//button[@aria-label='Prosseguir para pagamento. Selecionar'])[2]'.</msg>
-<status status="PASS" starttime="20240115 17:55:07.150" endtime="20240115 17:55:07.414"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:06.345" endtime="20240115 17:55:07.414"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Carregando informações</arg>
-<arg>40</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:55:07.414" endtime="20240115 17:55:07.486"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaopassagens.VLD_MODAL_PGTO}</arg>
-<arg>40</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:55:07.487" endtime="20240115 17:55:25.036"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${selecaopassagens.BTN_MODAL_PGTO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:55:25.038" level="INFO">Clicking element '(//*[text()='Não, obrigado!'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:55:25.036" endtime="20240115 17:55:25.748"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Carregando informações</arg>
-<arg>40</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:55:25.748" endtime="20240115 17:55:25.930"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaopassagens.VLD_MODAL_1CLIQUE}</arg>
-<arg>20</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:55:25.930" endtime="20240115 17:55:35.233"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.BTN_PGTO_1CLIQUE}</arg>
-<arg>10</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:55:35.236" endtime="20240115 17:55:35.332"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:55:35.334" level="INFO">Clicking element '(//div[text()='Não quero pagar com 1-clique'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:55:35.332" endtime="20240115 17:55:35.979"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:35.234" endtime="20240115 17:55:35.979"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:06.343" endtime="20240115 17:55:35.979"/>
-</kw>
-<kw name="E o sistema devera prosseguir para a tela de viajantes" library="viajantes_resources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${viajantes.TELA_VIAJANTES}</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:55:35.981" endtime="20240115 17:55:40.495"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${viajantes.BTN_PSG_PGTO_VIAJANTES}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:55:40.497" endtime="20240115 17:55:42.615"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:55:42.617" level="INFO">Clicking element '(//div[text()='Prosseguir para pagamento'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:55:42.616" endtime="20240115 17:55:42.745"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:40.495" endtime="20240115 17:55:42.745"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:35.981" endtime="20240115 17:55:42.745"/>
-</kw>
-<kw name="E selecionar forma de pagamento, clicar em cartão de crédito" library="pagamentos_resources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${pagamentos.VLD_TELA_PGTO}</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:55:42.747" endtime="20240115 17:55:47.768"/>
-</kw>
-<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
-<arg>3</arg>
-<arg>20s</arg>
-<arg>Click Element</arg>
-<arg>${pagamentos.SLC_PGTO}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${pagamentos.SLC_PGTO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:55:47.769" level="INFO">Clicking element '//label[@aria-label='Escolha como deseja pagar. Selecionar forma de pagamento. Selecionar']'.</msg>
-<msg timestamp="20240115 17:55:48.884" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240115 17:55:48.884" level="FAIL">Element with locator '//label[@aria-label='Escolha como deseja pagar. Selecionar forma de pagamento. Selecionar']' not found.</msg>
-<status status="FAIL" starttime="20240115 17:55:47.768" endtime="20240115 17:55:48.888"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${pagamentos.SLC_PGTO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:08.891" level="INFO">Clicking element '//label[@aria-label='Escolha como deseja pagar. Selecionar forma de pagamento. Selecionar']'.</msg>
-<status status="PASS" starttime="20240115 17:56:08.889" endtime="20240115 17:56:09.388"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:47.768" endtime="20240115 17:56:09.388"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${pagamentos.SLC_CC}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:09.392" level="INFO">Clicking element '//button[@aria-label='Cadastrar cartão de crédito. Selecionar']'.</msg>
-<status status="PASS" starttime="20240115 17:56:09.389" endtime="20240115 17:56:10.599"/>
-</kw>
-<status status="PASS" starttime="20240115 17:55:42.747" endtime="20240115 17:56:10.600"/>
-</kw>
-<kw name="E inserir um cartão de crédito valido" library="pagamentos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.INSERIR_CC}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:10.611" endtime="20240115 17:56:10.780"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:10.781" level="INFO">Clicking element '//span[contains(.,'Número do cartão')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:10.780" endtime="20240115 17:56:10.882"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:10.608" endtime="20240115 17:56:10.882"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${pagamentos.NMR_CC}</arg>
-<arg>${Numero_cartão}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:10.884" endtime="20240115 17:56:10.919"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:10.920" level="INFO">Typing text '5555444433331111' into text field '//input[@aria-label='Número do cartão']'.</msg>
-<status status="PASS" starttime="20240115 17:56:10.919" endtime="20240115 17:56:11.310"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:10.882" endtime="20240115 17:56:11.310"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.INSERIR_VLD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:11.312" endtime="20240115 17:56:11.339"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:11.339" level="INFO">Clicking element '//span[contains(.,'Validade')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:11.339" endtime="20240115 17:56:11.508"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:11.311" endtime="20240115 17:56:11.508"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${pagamentos.NMR_VLD}</arg>
-<arg>${Validade}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:11.509" endtime="20240115 17:56:11.589"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:11.590" level="INFO">Typing text '03/30' into text field '//input[@aria-label='Validade']'.</msg>
-<status status="PASS" starttime="20240115 17:56:11.589" endtime="20240115 17:56:11.801"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:11.508" endtime="20240115 17:56:11.801"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.INSERIR_CVV}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:11.803" endtime="20240115 17:56:11.836"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:11.837" level="INFO">Clicking element '//span[contains(.,'CVV')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:11.836" endtime="20240115 17:56:12.005"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:11.801" endtime="20240115 17:56:12.005"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${pagamentos.NMR_CVV}</arg>
-<arg>${CVV}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:12.007" endtime="20240115 17:56:12.038"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:12.039" level="INFO">Typing text '737' into text field '//input[@aria-label='CVV']'.</msg>
-<status status="PASS" starttime="20240115 17:56:12.038" endtime="20240115 17:56:12.146"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:12.005" endtime="20240115 17:56:12.147"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.INSERIR_CPF}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:12.148" endtime="20240115 17:56:12.180"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:12.181" level="INFO">Clicking element '//span[contains(.,'CPF do titular do cartão')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:12.180" endtime="20240115 17:56:12.265"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:12.147" endtime="20240115 17:56:12.265"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${pagamentos.NMR_CPF}</arg>
-<arg>${Numero_CPF}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:12.266" endtime="20240115 17:56:12.297"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:12.298" level="INFO">Typing text '18124874360' into text field '//input[@aria-label='CPF do titular do cartão']'.</msg>
-<status status="PASS" starttime="20240115 17:56:12.297" endtime="20240115 17:56:12.478"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:12.265" endtime="20240115 17:56:12.478"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.INSERIR_NOME}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:12.480" endtime="20240115 17:56:12.515"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:12.516" level="INFO">Clicking element '//span[contains(.,'Nome impresso no cartão')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:12.515" endtime="20240115 17:56:12.621"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:12.479" endtime="20240115 17:56:12.621"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${pagamentos.NOME}</arg>
-<arg>${Nome}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:12.623" endtime="20240115 17:56:12.674"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:12.675" level="INFO">Typing text 'Roberto Teste' into text field '//input[@aria-label='Nome impresso no cartão']'.</msg>
-<status status="PASS" starttime="20240115 17:56:12.674" endtime="20240115 17:56:12.908"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:12.622" endtime="20240115 17:56:12.909"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:10.605" endtime="20240115 17:56:12.909"/>
-</kw>
-<kw name="Quando clicar em adicionar cartão" library="pagamentos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.BTN_ADD_CC}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:12.913" endtime="20240115 17:56:13.159"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:13.159" level="INFO">Clicking element '//input[@value='Adicionar cartão']'.</msg>
-<status status="PASS" starttime="20240115 17:56:13.159" endtime="20240115 17:56:13.537"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:12.911" endtime="20240115 17:56:13.537"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:12.910" endtime="20240115 17:56:13.537"/>
-</kw>
-<kw name="Então o sistema devera retornar para a tela de pagamento" library="pagamentos_resources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${pagamentos.VLD_CC}</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:13.551" endtime="20240115 17:56:14.409"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:13.551" endtime="20240115 17:56:14.409"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240115 17:56:14.410" endtime="20240115 17:56:17.136"/>
-</kw>
-<doc>Esse caso de testes serve para validar a inserção de Cartão de Crédito na tela de pagamento</doc>
-<tag>INSERIR CARTÃO</tag>
-<tag>t3</tag>
-<status status="PASS" starttime="20240115 17:54:16.922" endtime="20240115 17:56:17.137"/>
-</test>
-<test id="s1-t4" name="Caso de testes 04 - Efetuar Pagamento da Tarifa" line="50">
-<kw name="inicia o teste com login" library="setup_teardown" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL_STG}</arg>
-<arg>${Browser}</arg>
-<arg>options=add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--safebrowsing-disable-download-protection");add_argument("--disable-web-security")</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240115 17:56:17.142" level="INFO">Opening browser 'Chrome' to base url 'https://azul-stage65.adobecqms.net/br/pt/home'.</msg>
-<status status="PASS" starttime="20240115 17:56:17.141" endtime="20240115 17:56:23.391"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240115 17:56:23.391" endtime="20240115 17:56:23.574"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${login.BTN_LOGIN}</arg>
-<arg>50</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:23.581" endtime="20240115 17:56:25.961"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:25.963" level="INFO">Clicking element '(//span[text()='Fazer Login'])[2]'.</msg>
-<status status="PASS" starttime="20240115 17:56:25.961" endtime="20240115 17:56:26.658"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:23.576" endtime="20240115 17:56:26.659"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${login.VLD_TELA_LOGIN}</arg>
-<arg>20</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:26.659" endtime="20240115 17:56:30.353"/>
-</kw>
-<kw name="realiza o login" library="helpers">
-<arg>USER=${USER}</arg>
-<doc>Keyword responsável por fazer o Login no app, a partir da página inicial.</doc>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>TIMEOUT=20</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:30.356" endtime="20240115 17:56:30.525"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:30.527" level="INFO">Clicking element '//input[contains(@aria-label,'Informe CPF ou Nº TudoAzul')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:30.526" endtime="20240115 17:56:30.728"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:30.354" endtime="20240115 17:56:30.728"/>
-</kw>
-<if>
-<branch type="IF" condition="&quot;${USER}&quot; == &quot;Tudo Azul&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${TA_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:30.731" endtime="20240115 17:56:30.770"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:30.772" level="INFO">Typing text '18124874360' into text field '//input[contains(@aria-label,'Informe CPF ou Nº TudoAzul')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:30.771" endtime="20240115 17:56:31.816"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:30.729" endtime="20240115 17:56:31.816"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:31.818" endtime="20240115 17:56:31.852"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:31.853" level="INFO">Typing text 'Azul2023**' into text field '//input[contains(@type,'password')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:31.852" endtime="20240115 17:56:32.102"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:31.817" endtime="20240115 17:56:32.102"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:30.728" endtime="20240115 17:56:32.102"/>
-</branch>
-<branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Tudo Azul II&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${TA_2}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:56:32.103" endtime="20240115 17:56:32.103"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:56:32.103" endtime="20240115 17:56:32.103"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:56:32.102" endtime="20240115 17:56:32.104"/>
-</branch>
-<branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Safira I&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${SAFIRA_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:56:32.104" endtime="20240115 17:56:32.104"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:56:32.104" endtime="20240115 17:56:32.104"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:56:32.104" endtime="20240115 17:56:32.105"/>
-</branch>
-<branch type="ELSE IF" condition="&quot;${USER}&quot; == &quot;Diamante I&quot;">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${DIAMANTE_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:56:32.105" endtime="20240115 17:56:32.105"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:56:32.105" endtime="20240115 17:56:32.105"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:56:32.105" endtime="20240115 17:56:32.105"/>
-</branch>
-<branch type="ELSE">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_LOGIN}</arg>
-<arg>${TA+_1}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:56:32.107" endtime="20240115 17:56:32.108"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${login.CAMPO_SENHA}</arg>
-<arg>${PWD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<status status="NOT RUN" starttime="20240115 17:56:32.108" endtime="20240115 17:56:32.108"/>
-</kw>
-<status status="NOT RUN" starttime="20240115 17:56:32.105" endtime="20240115 17:56:32.108"/>
-</branch>
-<status status="PASS" starttime="20240115 17:56:30.728" endtime="20240115 17:56:32.108"/>
-</if>
-<status status="PASS" starttime="20240115 17:56:30.353" endtime="20240115 17:56:32.108"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${login.BTN_ENTRAR_TA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:32.110" endtime="20240115 17:56:32.170"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:32.173" level="INFO">Clicking element '//*[text()='Entrar no TudoAzul']'.</msg>
-<status status="PASS" starttime="20240115 17:56:32.171" endtime="20240115 17:56:32.511"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:32.109" endtime="20240115 17:56:32.512"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:17.140" endtime="20240115 17:56:32.512"/>
-</kw>
-<kw name="Dado que eu esteja na tela de pagamento" library="pagamentos_resources">
-<kw name="que eu esteja na tela de seleção de passagens" library="selecaopassagens_resources">
-<kw name="clico em comprar passagem" library="selecaovoos_resources">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Estamos carregando suas informações</arg>
-<arg>60</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:56:32.518" endtime="20240115 17:56:34.736"/>
-</kw>
-<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
-<arg>Estamos carregando suas informações</arg>
-<arg>60</arg>
-<doc>Waits until ``text`` disappears from the current page.</doc>
-<status status="PASS" starttime="20240115 17:56:34.736" endtime="20240115 17:56:36.951"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${PRIMEIRO_NOME}</var>
-<arg>${login.LABEL_NOME}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:37.303" level="INFO">${PRIMEIRO_NOME} = roberto</msg>
-<status status="PASS" starttime="20240115 17:56:36.951" endtime="20240115 17:56:37.304"/>
-</kw>
-<kw name="Convert To Title Case" library="String">
-<var>${PRIMEIRO_NOME}</var>
-<arg>${PRIMEIRO_NOME}</arg>
-<doc>Converts string to title case.</doc>
-<msg timestamp="20240115 17:56:37.305" level="INFO">${PRIMEIRO_NOME} = Roberto</msg>
-<status status="PASS" starttime="20240115 17:56:37.304" endtime="20240115 17:56:37.305"/>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${PRIMEIRO_NOME}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20240115 17:56:37.306" level="INFO">${PRIMEIRO_NOME} = Roberto</msg>
-<status status="PASS" starttime="20240115 17:56:37.305" endtime="20240115 17:56:37.306"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${BOOL_BUSCA_VOOS}</var>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${selecaovoos.VLD_SELECAODEVOOS}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaovoos.VLD_SELECAODEVOOS}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<msg timestamp="20240115 17:56:43.194" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240115 17:56:43.194" level="FAIL">Element '//span[@aria-hidden='true'][contains(.,'Para onde vamos voar?')]' not visible after 5 seconds.</msg>
-<status status="FAIL" starttime="20240115 17:56:37.308" endtime="20240115 17:56:43.195"/>
-</kw>
-<msg timestamp="20240115 17:56:43.195" level="INFO">${BOOL_BUSCA_VOOS} = False</msg>
-<status status="PASS" starttime="20240115 17:56:37.307" endtime="20240115 17:56:43.195"/>
-</kw>
-<if>
-<branch type="IF" condition="${BOOL_BUSCA_VOOS} == False">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${selecaovoos.BTN_COMPRAR}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:43.196" level="INFO">Clicking element '(//button[@aria-label='Comprar passagens'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:56:43.195" endtime="20240115 17:56:43.514"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:43.195" endtime="20240115 17:56:43.514"/>
-</branch>
-<status status="PASS" starttime="20240115 17:56:43.195" endtime="20240115 17:56:43.514"/>
-</if>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaovoos.VLD_BTN_COMPRAR}</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:43.515" endtime="20240115 17:56:43.629"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:32.517" endtime="20240115 17:56:43.629"/>
-</kw>
-<kw name="inserir origem" library="selecaovoos_resources">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${selecaovoos.ORIGEM}</arg>
-<arg>VCP</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:43.630" endtime="20240115 17:56:43.690"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:43.691" level="INFO">Typing text 'VCP' into text field '//input[contains(@placeholder,'Digite a sua origem')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:43.690" endtime="20240115 17:56:44.010"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:43.629" endtime="20240115 17:56:44.010"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.VCP}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:44.012" endtime="20240115 17:56:44.490"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:44.492" level="INFO">Clicking element '//p[@class='button__text'][contains(.,'Campinas')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:44.491" endtime="20240115 17:56:44.654"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:44.010" endtime="20240115 17:56:44.654"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:43.629" endtime="20240115 17:56:44.655"/>
-</kw>
-<kw name="inserir destino" library="selecaovoos_resources">
-<kw name="Wait and Input Text" library="helpers">
-<arg>${selecaovoos.DESTINO}</arg>
-<arg>BSB</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:44.657" endtime="20240115 17:56:44.707"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:44.708" level="INFO">Typing text 'BSB' into text field '//input[contains(@placeholder,'Digite o seu destino')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:44.708" endtime="20240115 17:56:44.865"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:44.655" endtime="20240115 17:56:44.865"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.BSB}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:44.867" endtime="20240115 17:56:44.929"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:44.930" level="INFO">Clicking element '//b[contains(.,'Brasília')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:44.929" endtime="20240115 17:56:45.085"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:44.865" endtime="20240115 17:56:45.085"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:44.655" endtime="20240115 17:56:45.085"/>
-</kw>
-<kw name="inserir data ida" library="selecaovoos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.DATA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:45.092" endtime="20240115 17:56:45.162"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:45.164" level="INFO">Clicking element '//label[@aria-label='Datas (ida e volta)'][contains(.,'Datas (ida e volta)')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:45.162" endtime="20240115 17:56:45.360"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:45.088" endtime="20240115 17:56:45.360"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${selecaovoos.DATA_DE_IDA}</arg>
-<arg>05/02/2024</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:45.364" level="INFO">Typing text '05/02/2024' into text field '//input[contains(@name,'startDate')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:45.360" endtime="20240115 17:56:47.467"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:45.086" endtime="20240115 17:56:47.467"/>
-</kw>
-<kw name="inserir data volta" library="selecaovoos_resources">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${selecaovoos.DATA_DE_VOLTA}</arg>
-<arg>20/02/2024</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:47.470" level="INFO">Typing text '20/02/2024' into text field '//input[contains(@name,'endDate')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:47.468" endtime="20240115 17:56:48.621"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:47.467" endtime="20240115 17:56:48.621"/>
-</kw>
-<kw name="confirma seleção de data" library="selecaovoos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.BTN_SELECIONA_DATA}</arg>
-<arg>10</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:48.624" endtime="20240115 17:56:48.704"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:48.705" level="INFO">Clicking element '//div[@class='button__text'][contains(.,'Selecionar data de ida e volta')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:48.704" endtime="20240115 17:56:48.902"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:48.622" endtime="20240115 17:56:48.902"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:48.622" endtime="20240115 17:56:48.902"/>
-</kw>
-<kw name="clicar em buscar passagens" library="selecaovoos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaovoos.BTN_BUSCAR_PASSAGENS}</arg>
-<arg>40</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:48.905" endtime="20240115 17:56:49.048"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:49.049" level="INFO">Clicking element '//div[@class='button__text'][contains(.,'Buscar passagens')]'.</msg>
-<status status="PASS" starttime="20240115 17:56:49.048" endtime="20240115 17:56:49.498"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:48.903" endtime="20240115 17:56:49.499"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:48.902" endtime="20240115 17:56:49.499"/>
-</kw>
-<kw name="o site devera exibir a lista de voos" library="selecaovoos_resources">
-<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
-<arg>Estamos esquentando as turbinas</arg>
-<arg>40</arg>
-<doc>Waits until ``text`` disappears from the current page.</doc>
-<status status="PASS" starttime="20240115 17:56:49.500" endtime="20240115 17:56:49.602"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Olá ${PRIMEIRO_NOME}, esse é o resultado de sua busca.</arg>
-<arg>30</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:56:49.602" endtime="20240115 17:56:51.586"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:49.499" endtime="20240115 17:56:51.586"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:32.516" endtime="20240115 17:56:51.586"/>
-</kw>
-<kw name="eu selecionar as tarifas de ida e volta" library="selecaopassagens_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.SLC_VIAGEM_IDA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:56:51.589" endtime="20240115 17:56:57.826"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:57.827" level="INFO">Clicking element '(//div[@aria-label='Ver tarifas deste voo. Selecionar'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:56:57.826" endtime="20240115 17:56:58.532"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:51.587" endtime="20240115 17:56:58.532"/>
-</kw>
-<while condition="True">
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Click Element</arg>
-<arg>${selecaopassagens.BTN_SLC_TRF_IDA}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${selecaopassagens.BTN_SLC_TRF_IDA}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:56:58.536" level="INFO">Clicking element '(//button[@aria-label='Selecionar tarifa'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:56:58.534" endtime="20240115 17:57:00.519"/>
-</kw>
-<msg timestamp="20240115 17:57:00.520" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20240115 17:56:58.533" endtime="20240115 17:57:00.520"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="PASS" starttime="20240115 17:57:00.520" endtime="20240115 17:57:00.520"/>
-</break>
-<status status="PASS" starttime="20240115 17:57:00.520" endtime="20240115 17:57:00.520"/>
-</branch>
-<status status="PASS" starttime="20240115 17:57:00.520" endtime="20240115 17:57:00.521"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_UP</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240115 17:57:00.521" endtime="20240115 17:57:00.521"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:58.532" endtime="20240115 17:57:00.522"/>
-</iter>
-<status status="PASS" starttime="20240115 17:56:58.532" endtime="20240115 17:57:00.523"/>
-</while>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.SLC_VIAGEM_VOLTA}</arg>
-<arg>10</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:57:00.527" endtime="20240115 17:57:00.887"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:57:00.888" level="INFO">Clicking element '(//div[@aria-label='Ver tarifas deste voo. Selecionar'])[2]'.</msg>
-<status status="PASS" starttime="20240115 17:57:00.888" endtime="20240115 17:57:01.284"/>
-</kw>
-<status status="PASS" starttime="20240115 17:57:00.524" endtime="20240115 17:57:01.285"/>
-</kw>
-<while condition="True">
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Wait and Click Element</arg>
-<arg>${selecaopassagens.BTN_SLC_TRF_VOLTA}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.BTN_SLC_TRF_VOLTA}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:57:01.290" endtime="20240115 17:57:01.701"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:57:01.703" level="INFO">Clicking element '(//button[contains(.,'Selecionar tarifaSelecionar tarifa')])[4]'.</msg>
-<status status="PASS" starttime="20240115 17:57:01.702" endtime="20240115 17:57:02.568"/>
-</kw>
-<status status="PASS" starttime="20240115 17:57:01.286" endtime="20240115 17:57:02.568"/>
-</kw>
-<msg timestamp="20240115 17:57:02.568" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20240115 17:57:01.286" endtime="20240115 17:57:02.568"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="PASS" starttime="20240115 17:57:02.568" endtime="20240115 17:57:02.569"/>
-</break>
-<status status="PASS" starttime="20240115 17:57:02.568" endtime="20240115 17:57:02.569"/>
-</branch>
-<status status="PASS" starttime="20240115 17:57:02.568" endtime="20240115 17:57:02.569"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_UP</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240115 17:57:02.569" endtime="20240115 17:57:02.569"/>
-</kw>
-<status status="PASS" starttime="20240115 17:57:01.285" endtime="20240115 17:57:02.569"/>
-</iter>
-<status status="PASS" starttime="20240115 17:57:01.285" endtime="20240115 17:57:02.569"/>
-</while>
-<status status="PASS" starttime="20240115 17:56:51.587" endtime="20240115 17:57:02.569"/>
-</kw>
-<kw name="clicar em prosseguir para pagamento" library="selecaopassagens_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.BTN_PSG_PGTO}</arg>
-<arg>30</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:57:02.572" endtime="20240115 17:57:03.062"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:57:03.062" level="INFO">Clicking element '(//button[@aria-label='Prosseguir para pagamento. Selecionar'])[2]'.</msg>
-<status status="PASS" starttime="20240115 17:57:03.062" endtime="20240115 17:57:04.514"/>
-</kw>
-<status status="PASS" starttime="20240115 17:57:02.570" endtime="20240115 17:57:04.514"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Carregando informações</arg>
-<arg>40</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:57:04.514" endtime="20240115 17:57:04.591"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaopassagens.VLD_MODAL_PGTO}</arg>
-<arg>40</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:57:04.591" endtime="20240115 17:57:19.817"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${selecaopassagens.BTN_MODAL_PGTO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:57:19.818" level="INFO">Clicking element '(//*[text()='Não, obrigado!'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:57:19.817" endtime="20240115 17:57:20.300"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Carregando informações</arg>
-<arg>40</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240115 17:57:20.300" endtime="20240115 17:57:20.426"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${selecaopassagens.VLD_MODAL_1CLIQUE}</arg>
-<arg>20</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:57:20.426" endtime="20240115 17:57:25.838"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${selecaopassagens.BTN_PGTO_1CLIQUE}</arg>
-<arg>10</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:57:25.840" endtime="20240115 17:57:25.935"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:57:25.937" level="INFO">Clicking element '(//div[text()='Não quero pagar com 1-clique'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:57:25.935" endtime="20240115 17:57:26.365"/>
-</kw>
-<status status="PASS" starttime="20240115 17:57:25.839" endtime="20240115 17:57:26.365"/>
-</kw>
-<status status="PASS" starttime="20240115 17:57:02.570" endtime="20240115 17:57:26.365"/>
-</kw>
-<kw name="o sistema devera prosseguir para a tela de viajantes" library="viajantes_resources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${viajantes.TELA_VIAJANTES}</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:57:26.368" endtime="20240115 17:57:31.352"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${viajantes.BTN_PSG_PGTO_VIAJANTES}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:57:31.354" endtime="20240115 17:57:33.273"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:57:33.273" level="INFO">Clicking element '(//div[text()='Prosseguir para pagamento'])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:57:33.273" endtime="20240115 17:57:33.592"/>
-</kw>
-<status status="PASS" starttime="20240115 17:57:31.352" endtime="20240115 17:57:33.592"/>
-</kw>
-<status status="PASS" starttime="20240115 17:57:26.366" endtime="20240115 17:57:33.592"/>
-</kw>
-<kw name="selecionar forma de pagamento, clicar em cartão de crédito" library="pagamentos_resources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${pagamentos.VLD_TELA_PGTO}</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:57:33.593" endtime="20240115 17:57:40.338"/>
-</kw>
-<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
-<arg>3</arg>
-<arg>20s</arg>
-<arg>Click Element</arg>
-<arg>${pagamentos.SLC_PGTO}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${pagamentos.SLC_PGTO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:57:40.342" level="INFO">Clicking element '//label[@aria-label='Escolha como deseja pagar. Selecionar forma de pagamento. Selecionar']'.</msg>
-<msg timestamp="20240115 17:57:41.262" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240115 17:57:41.263" level="FAIL">Element with locator '//label[@aria-label='Escolha como deseja pagar. Selecionar forma de pagamento. Selecionar']' not found.</msg>
-<status status="FAIL" starttime="20240115 17:57:40.339" endtime="20240115 17:57:41.265"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${pagamentos.SLC_PGTO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:01.266" level="INFO">Clicking element '//label[@aria-label='Escolha como deseja pagar. Selecionar forma de pagamento. Selecionar']'.</msg>
-<status status="PASS" starttime="20240115 17:58:01.265" endtime="20240115 17:58:01.569"/>
-</kw>
-<status status="PASS" starttime="20240115 17:57:40.338" endtime="20240115 17:58:01.569"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${pagamentos.SLC_CC}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:01.573" level="INFO">Clicking element '//button[@aria-label='Cadastrar cartão de crédito. Selecionar']'.</msg>
-<status status="PASS" starttime="20240115 17:58:01.570" endtime="20240115 17:58:02.403"/>
-</kw>
-<status status="PASS" starttime="20240115 17:57:33.593" endtime="20240115 17:58:02.403"/>
-</kw>
-<kw name="inserir um cartão de crédito valido" library="pagamentos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.INSERIR_CC}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:02.406" endtime="20240115 17:58:02.757"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:02.761" level="INFO">Clicking element '//span[contains(.,'Número do cartão')]'.</msg>
-<status status="PASS" starttime="20240115 17:58:02.757" endtime="20240115 17:58:03.050"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:02.405" endtime="20240115 17:58:03.050"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${pagamentos.NMR_CC}</arg>
-<arg>${Numero_cartão}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:03.051" endtime="20240115 17:58:03.082"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:03.083" level="INFO">Typing text '5555444433331111' into text field '//input[@aria-label='Número do cartão']'.</msg>
-<status status="PASS" starttime="20240115 17:58:03.082" endtime="20240115 17:58:03.503"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:03.050" endtime="20240115 17:58:03.503"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.INSERIR_VLD}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:03.505" endtime="20240115 17:58:03.738"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:03.739" level="INFO">Clicking element '//span[contains(.,'Validade')]'.</msg>
-<status status="PASS" starttime="20240115 17:58:03.739" endtime="20240115 17:58:03.906"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:03.504" endtime="20240115 17:58:03.906"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${pagamentos.NMR_VLD}</arg>
-<arg>${Validade}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:03.907" endtime="20240115 17:58:03.980"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:03.980" level="INFO">Typing text '03/30' into text field '//input[@aria-label='Validade']'.</msg>
-<status status="PASS" starttime="20240115 17:58:03.980" endtime="20240115 17:58:04.138"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:03.906" endtime="20240115 17:58:04.138"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.INSERIR_CVV}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:04.140" endtime="20240115 17:58:04.171"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:04.172" level="INFO">Clicking element '//span[contains(.,'CVV')]'.</msg>
-<status status="PASS" starttime="20240115 17:58:04.172" endtime="20240115 17:58:04.340"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:04.138" endtime="20240115 17:58:04.340"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${pagamentos.NMR_CVV}</arg>
-<arg>${CVV}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:04.342" endtime="20240115 17:58:04.379"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:04.380" level="INFO">Typing text '737' into text field '//input[@aria-label='CVV']'.</msg>
-<status status="PASS" starttime="20240115 17:58:04.379" endtime="20240115 17:58:04.487"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:04.340" endtime="20240115 17:58:04.487"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.INSERIR_CPF}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:04.488" endtime="20240115 17:58:04.514"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:04.515" level="INFO">Clicking element '//span[contains(.,'CPF do titular do cartão')]'.</msg>
-<status status="PASS" starttime="20240115 17:58:04.514" endtime="20240115 17:58:04.614"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:04.487" endtime="20240115 17:58:04.614"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${pagamentos.NMR_CPF}</arg>
-<arg>${Numero_CPF}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:04.616" endtime="20240115 17:58:04.654"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:04.654" level="INFO">Typing text '18124874360' into text field '//input[@aria-label='CPF do titular do cartão']'.</msg>
-<status status="PASS" starttime="20240115 17:58:04.654" endtime="20240115 17:58:04.933"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:04.614" endtime="20240115 17:58:04.934"/>
-</kw>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.INSERIR_NOME}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:04.935" endtime="20240115 17:58:04.979"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:04.980" level="INFO">Clicking element '//span[contains(.,'Nome impresso no cartão')]'.</msg>
-<status status="PASS" starttime="20240115 17:58:04.979" endtime="20240115 17:58:05.223"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:04.934" endtime="20240115 17:58:05.224"/>
-</kw>
-<kw name="Wait and Input Text" library="helpers">
-<arg>${pagamentos.NOME}</arg>
-<arg>${Nome}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e digitar o texto.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:05.226" endtime="20240115 17:58:05.297"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>${TEXT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:05.298" level="INFO">Typing text 'Roberto Teste' into text field '//input[@aria-label='Nome impresso no cartão']'.</msg>
-<status status="PASS" starttime="20240115 17:58:05.297" endtime="20240115 17:58:06.144"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:05.224" endtime="20240115 17:58:06.144"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:02.404" endtime="20240115 17:58:06.144"/>
-</kw>
-<kw name="clicar em adicionar cartão" library="pagamentos_resources">
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.BTN_ADD_CC}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:06.147" endtime="20240115 17:58:06.223"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:06.224" level="INFO">Clicking element '//input[@value='Adicionar cartão']'.</msg>
-<status status="PASS" starttime="20240115 17:58:06.223" endtime="20240115 17:58:06.955"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:06.145" endtime="20240115 17:58:06.955"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:06.145" endtime="20240115 17:58:06.955"/>
-</kw>
-<kw name="o sistema devera retornar para a tela de pagamento" library="pagamentos_resources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${pagamentos.VLD_CC}</arg>
-<arg>30</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:06.956" endtime="20240115 17:58:07.838"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:06.956" endtime="20240115 17:58:07.838"/>
-</kw>
-<status status="PASS" starttime="20240115 17:56:32.515" endtime="20240115 17:58:07.838"/>
-</kw>
-<kw name="E seleciono a forma de parcelamento" library="pagamentos_resources">
-<while condition="True">
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Click Element</arg>
-<arg>${pagamentos.SLC_PARC}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${pagamentos.SLC_PARC}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:07.853" level="INFO">Clicking element '//div[text()='Em quantas vezes quer pagar?']'.</msg>
-<status status="PASS" starttime="20240115 17:58:07.850" endtime="20240115 17:58:09.074"/>
-</kw>
-<msg timestamp="20240115 17:58:09.075" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20240115 17:58:07.849" endtime="20240115 17:58:09.075"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="PASS" starttime="20240115 17:58:09.075" endtime="20240115 17:58:09.075"/>
-</break>
-<status status="PASS" starttime="20240115 17:58:09.075" endtime="20240115 17:58:09.075"/>
-</branch>
-<status status="PASS" starttime="20240115 17:58:09.075" endtime="20240115 17:58:09.075"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_DOWN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240115 17:58:09.076" endtime="20240115 17:58:09.076"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:07.849" endtime="20240115 17:58:09.076"/>
-</iter>
-<status status="PASS" starttime="20240115 17:58:07.849" endtime="20240115 17:58:09.076"/>
-</while>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.SLC_PARC_1X}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:09.078" endtime="20240115 17:58:09.450"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:09.451" level="INFO">Clicking element '(//*[contains(text(),'1x R$')])[1]'.</msg>
-<status status="PASS" starttime="20240115 17:58:09.451" endtime="20240115 17:58:09.612"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:09.076" endtime="20240115 17:58:09.612"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${pagamentos.INSERIR_CLR}</arg>
-<arg>11987654321</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:09.613" level="INFO">Typing text '11987654321' into text field '//input[@aria-label='Celular']'.</msg>
-<status status="PASS" starttime="20240115 17:58:09.612" endtime="20240115 17:58:09.946"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:07.848" endtime="20240115 17:58:09.946"/>
-</kw>
-<kw name="Quando selecionar o checkbox dos termos de contrato" library="pagamentos_resources">
-<while condition="True">
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Click Element</arg>
-<arg>${pagamentos.SLC_CHECKBOX}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${pagamentos.SLC_CHECKBOX}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:09.950" level="INFO">Clicking element '//label[@aria-label='Li e estou de acordo com o contrato de transporte aéreo, selecionar']//div[1]'.</msg>
-<msg timestamp="20240115 17:58:11.313" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240115 17:58:11.313" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (472, 1247)
-  (Session info: chrome=120.0.6099.217)
-Stacktrace:
-	GetHandleVerifier [0x00007FF62E5D2142+3514994]
-	(No symbol) [0x00007FF62E1F0CE2]
-	(No symbol) [0x00007FF62E0976AA]
-	(No symbol) [0x00007FF62E0E88F3]
-	(No symbol) [0x00007FF62E0E68ED]
-	(No symbol) [0x00007FF62E0E40EC]
-	(No symbol) [0x00007FF62E0E2EA5]
-	(No symbol) [0x00007FF62E0D6A0F]
-	(No symbol) [0x00007FF62E105FEA]
-	(No symbol) [0x00007FF62E0D63B6]
-	(No symbol) [0x00007FF62E106490]
-	(No symbol) [0x00007FF62E1228F6]
-	(No symbol) [0x00007FF62E105D93]
-	(No symbol) [0x00007FF62E0D4BDC]
-	(No symbol) [0x00007FF62E0D5C64]
-	GetHandleVerifier [0x00007FF62E5FE16B+3695259]
-	GetHandleVerifier [0x00007FF62E656737+4057191]
-	GetHandleVerifier [0x00007FF62E64E4E3+4023827]
-	GetHandleVerifier [0x00007FF62E3204F9+689705]
-	(No symbol) [0x00007FF62E1FC048]
-	(No symbol) [0x00007FF62E1F8044]
-	(No symbol) [0x00007FF62E1F81C9]
-	(No symbol) [0x00007FF62E1E88C4]
-	BaseThreadInitThunk [0x00007FFA86727344+20]
-	RtlUserThreadStart [0x00007FFA879226B1+33]
-</msg>
-<status status="FAIL" starttime="20240115 17:58:09.949" endtime="20240115 17:58:11.317"/>
-</kw>
-<msg timestamp="20240115 17:58:11.317" level="INFO">${status} = False</msg>
-<status status="PASS" starttime="20240115 17:58:09.948" endtime="20240115 17:58:11.317"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="NOT RUN" starttime="20240115 17:58:11.317" endtime="20240115 17:58:11.317"/>
-</break>
-<status status="NOT RUN" starttime="20240115 17:58:11.317" endtime="20240115 17:58:11.317"/>
-</branch>
-<status status="PASS" starttime="20240115 17:58:11.317" endtime="20240115 17:58:11.317"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_DOWN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20240115 17:58:11.318" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
-<msg timestamp="20240115 17:58:11.318" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
-<msg timestamp="20240115 17:58:11.318" level="INFO">Releasing special key ARROW_DOWN.</msg>
-<status status="PASS" starttime="20240115 17:58:11.317" endtime="20240115 17:58:11.333"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:09.948" endtime="20240115 17:58:11.333"/>
-</iter>
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Click Element</arg>
-<arg>${pagamentos.SLC_CHECKBOX}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${pagamentos.SLC_CHECKBOX}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:11.335" level="INFO">Clicking element '//label[@aria-label='Li e estou de acordo com o contrato de transporte aéreo, selecionar']//div[1]'.</msg>
-<status status="PASS" starttime="20240115 17:58:11.334" endtime="20240115 17:58:11.454"/>
-</kw>
-<msg timestamp="20240115 17:58:11.455" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20240115 17:58:11.333" endtime="20240115 17:58:11.455"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="PASS" starttime="20240115 17:58:11.455" endtime="20240115 17:58:11.456"/>
-</break>
-<status status="PASS" starttime="20240115 17:58:11.455" endtime="20240115 17:58:11.456"/>
-</branch>
-<status status="PASS" starttime="20240115 17:58:11.455" endtime="20240115 17:58:11.456"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_DOWN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240115 17:58:11.456" endtime="20240115 17:58:11.456"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:11.333" endtime="20240115 17:58:11.456"/>
-</iter>
-<status status="PASS" starttime="20240115 17:58:09.948" endtime="20240115 17:58:11.456"/>
-</while>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.SLC_CHECKBOX}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:11.460" endtime="20240115 17:58:11.492"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:11.493" level="INFO">Clicking element '//label[@aria-label='Li e estou de acordo com o contrato de transporte aéreo, selecionar']//div[1]'.</msg>
-<status status="PASS" starttime="20240115 17:58:11.492" endtime="20240115 17:58:11.593"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:11.457" endtime="20240115 17:58:11.593"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:09.947" endtime="20240115 17:58:11.593"/>
-</kw>
-<kw name="E clicar em efetuar pagamento" library="pagamentos_resources">
-<while condition="True">
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Wait and Click Element</arg>
-<arg>${pagamentos.FNZ_PGTO}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.FNZ_PGTO}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:11.596" endtime="20240115 17:58:11.653"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:11.654" level="INFO">Clicking element '//button[@data-test-id='no-id']//div[1]'.</msg>
-<msg timestamp="20240115 17:58:13.014" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240115 17:58:13.014" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (626, 958)
-  (Session info: chrome=120.0.6099.217)
-Stacktrace:
-	GetHandleVerifier [0x00007FF62E5D2142+3514994]
-	(No symbol) [0x00007FF62E1F0CE2]
-	(No symbol) [0x00007FF62E0976AA]
-	(No symbol) [0x00007FF62E0E88F3]
-	(No symbol) [0x00007FF62E0E68ED]
-	(No symbol) [0x00007FF62E0E40EC]
-	(No symbol) [0x00007FF62E0E2EA5]
-	(No symbol) [0x00007FF62E0D6A0F]
-	(No symbol) [0x00007FF62E105FEA]
-	(No symbol) [0x00007FF62E0D63B6]
-	(No symbol) [0x00007FF62E106490]
-	(No symbol) [0x00007FF62E1228F6]
-	(No symbol) [0x00007FF62E105D93]
-	(No symbol) [0x00007FF62E0D4BDC]
-	(No symbol) [0x00007FF62E0D5C64]
-	GetHandleVerifier [0x00007FF62E5FE16B+3695259]
-	GetHandleVerifier [0x00007FF62E656737+4057191]
-	GetHandleVerifier [0x00007FF62E64E4E3+4023827]
-	GetHandleVerifier [0x00007FF62E3204F9+689705]
-	(No symbol) [0x00007FF62E1FC048]
-	(No symbol) [0x00007FF62E1F8044]
-	(No symbol) [0x00007FF62E1F81C9]
-	(No symbol) [0x00007FF62E1E88C4]
-	BaseThreadInitThunk [0x00007FFA86727344+20]
-	RtlUserThreadStart [0x00007FFA879226B1+33]
-</msg>
-<status status="FAIL" starttime="20240115 17:58:11.653" endtime="20240115 17:58:13.015"/>
-</kw>
-<status status="FAIL" starttime="20240115 17:58:11.594" endtime="20240115 17:58:13.016"/>
-</kw>
-<msg timestamp="20240115 17:58:13.016" level="INFO">${status} = False</msg>
-<status status="PASS" starttime="20240115 17:58:11.594" endtime="20240115 17:58:13.016"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="NOT RUN" starttime="20240115 17:58:13.016" endtime="20240115 17:58:13.016"/>
-</break>
-<status status="NOT RUN" starttime="20240115 17:58:13.016" endtime="20240115 17:58:13.016"/>
-</branch>
-<status status="PASS" starttime="20240115 17:58:13.016" endtime="20240115 17:58:13.016"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_DOWN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20240115 17:58:13.016" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
-<msg timestamp="20240115 17:58:13.017" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
-<msg timestamp="20240115 17:58:13.017" level="INFO">Releasing special key ARROW_DOWN.</msg>
-<status status="PASS" starttime="20240115 17:58:13.016" endtime="20240115 17:58:13.029"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:11.594" endtime="20240115 17:58:13.030"/>
-</iter>
-<iter>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${status}</var>
-<arg>Wait and Click Element</arg>
-<arg>${pagamentos.FNZ_PGTO}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait and Click Element" library="helpers">
-<arg>${pagamentos.FNZ_PGTO}</arg>
-<doc>Keyword responsável por aguardar o elemento estar visível e clicar.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:13.031" endtime="20240115 17:58:13.070"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240115 17:58:13.070" level="INFO">Clicking element '//button[@data-test-id='no-id']//div[1]'.</msg>
-<status status="PASS" starttime="20240115 17:58:13.070" endtime="20240115 17:58:13.268"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:13.030" endtime="20240115 17:58:13.268"/>
-</kw>
-<msg timestamp="20240115 17:58:13.269" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20240115 17:58:13.030" endtime="20240115 17:58:13.269"/>
-</kw>
-<if>
-<branch type="IF" condition="${status}">
-<break>
-<status status="PASS" starttime="20240115 17:58:13.269" endtime="20240115 17:58:13.269"/>
-</break>
-<status status="PASS" starttime="20240115 17:58:13.269" endtime="20240115 17:58:13.269"/>
-</branch>
-<status status="PASS" starttime="20240115 17:58:13.269" endtime="20240115 17:58:13.269"/>
-</if>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${None}</arg>
-<arg>ARROW_DOWN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240115 17:58:13.269" endtime="20240115 17:58:13.269"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:13.030" endtime="20240115 17:58:13.269"/>
-</iter>
-<status status="PASS" starttime="20240115 17:58:11.594" endtime="20240115 17:58:13.269"/>
-</while>
-<status status="PASS" starttime="20240115 17:58:11.594" endtime="20240115 17:58:13.269"/>
-</kw>
-<kw name="Então o sistema devera finalizar o pagamento" library="prox_viagem_resources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${prox_viagem.TELA_PROX_VIAGEM}</arg>
-<arg>40</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:13.271" endtime="20240115 17:58:34.192"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:13.270" endtime="20240115 17:58:34.192"/>
-</kw>
-<kw name="E apresentar a tela de sucesso" library="prox_viagem_resources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${prox_viagem.VLD_TELA_PROX_VIAGEM}</arg>
-<arg>40</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240115 17:58:34.194" endtime="20240115 17:58:36.794"/>
-</kw>
-<status status="PASS" starttime="20240115 17:58:34.193" endtime="20240115 17:58:36.794"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240115 17:58:36.795" endtime="20240115 17:58:39.542"/>
-</kw>
-<doc>Esse caso de teste serve para fazer a finalização do pagamento</doc>
-<tag>FINALIZAR PAGAMENTO</tag>
-<tag>t4</tag>
-<status status="PASS" starttime="20240115 17:56:17.139" endtime="20240115 17:58:39.543"/>
+<status status="PASS" starttime="20240115 19:45:23.901" endtime="20240115 19:46:02.238"/>
 </test>
 <doc>Essa suite testa o booking de 1 ADT Logado</doc>
-<status status="PASS" starttime="20240115 17:52:23.078" endtime="20240115 17:58:39.545"/>
+<status status="PASS" starttime="20240115 19:45:23.398" endtime="20240115 19:46:02.246"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="1" fail="0" skip="0">BOOKING</stat>
-<stat pass="1" fail="0" skip="0">FINALIZAR PAGAMENTO</stat>
-<stat pass="1" fail="0" skip="0">INSERIR CARTÃO</stat>
-<stat pass="1" fail="0" skip="0">SELECIONAR TARIFA</stat>
 <stat pass="1" fail="0" skip="0">t1</stat>
-<stat pass="1" fail="0" skip="0">t2</stat>
-<stat pass="1" fail="0" skip="0">t3</stat>
-<stat pass="1" fail="0" skip="0">t4</stat>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="Booking 1Adt Lgd">Booking 1Adt Lgd</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Booking 1Adt Lgd">Booking 1Adt Lgd</stat>
 </suite>
 </statistics>
 <errors>
