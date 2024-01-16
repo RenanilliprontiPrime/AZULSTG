@@ -9,10 +9,12 @@ inicia o teste com login
     Maximize Browser Window
     # Wait Until Element Is Visible     ${BTN_COOKIES}
     # Click Element                     ${BTN_COOKIES}
-    Wait and Click Element            ${login.BTN_LOGIN}        50
-    Wait Until Element Is Visible     ${login.VLD_TELA_LOGIN}   20
-    realiza o login                   USER=${USER}
-    Wait and click element            ${login.BTN_ENTRAR_TA}
+    Wait and Click Element              ${login.BTN_LOGIN}        50
+    Wait Until Element Is Visible       ${login.VLD_TELA_LOGIN}   20
+    realiza o login                     USER=${USER}
+    Wait and click element              ${login.BTN_ENTRAR_TA}
+    # Wait Until Page Contains            ${login.VLD_TELA_LOGIN}
+    Wait Until Page Does Not Contain    ${login.VLD_TELA_LOGIN}
     
 
 

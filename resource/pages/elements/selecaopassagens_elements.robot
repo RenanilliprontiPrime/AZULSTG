@@ -16,3 +16,8 @@ Resource    ../../../resource/main.robot
 ...        VLD_MODAL_1CLIQUE=(//p[text()='Você está a 1-clique da sua viagem'])[1]
 ...        BTN_PGTO_1CLIQUE=(//div[text()='Não quero pagar com 1-clique'])[1]
 
+...        SLC_VIAGEM_IDA_2=//div[@id='QUR_NjAzMX4gfn5QT0F_MDIvMDUvMjAyNCAwNTo1NX5DR0h_MDIvMDUvMjAyNCAwNzoyNX5_XkFEfjYwNTJ_IH5_Q0dIfjAyLzA1LzIwMjQgMTA6MDB_U0RVfjAyLzA1LzIwMjQgMTE6MDB_fg--']/div[1]
+...        BTN_SLC_TRF_2=(//button[@aria-label='Selecionar tarifa'])[3]
+...        BTN_INF_VIAJANTES=(//button[@aria-label='Informar viajantes'])[2]
+
+
