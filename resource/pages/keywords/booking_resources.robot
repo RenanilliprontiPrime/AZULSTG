@@ -52,7 +52,7 @@ que o cliente esteja com o destino de voo selecionado, data, forma de pagamento 
     Wait and Click Element                    ${booking.BTN_CHD_MAIS}
     Wait and Click Element                    ${booking.BTN_CONFIRMAR}
     Wait and Click Element                    ${selecaovoos.BTN_BUSCAR_PASSAGENS}        40
-    Capture Page Screenshot
+    # Capture Page Screenshot
 
 selecionar a passagem desejada escolhendo a tarifa "Azul", clicar em "Informar viajantes", inserir os dados do passageiro, inserir a forma de pagamento no cartão de crédito à vista 
     
@@ -70,48 +70,54 @@ selecionar a passagem desejada escolhendo a tarifa "Azul", clicar em "Informar v
     END
 
 # clicar em informar viajantes
-    Wait Until Page Contains                  Carregando informações                      40
-    Wait and Click Element                    ${selecaopassagens.BTN_INF_VIAJANTES}       30
-    Wait Until Page Contains                  Carregando informações                      40
+    Wait Until Page Does Not Contain           Carregando informações                      40
+    Wait and Click Element                     ${selecaopassagens.BTN_INF_VIAJANTES}       30
+    Wait Until Page Does Not Contain           Carregando informações                      40
 
-    WHILE  True
-        ${status}  Run keyword and return status   Click Element   ${booking.VIAJANTE_2}
-        IF   ${status}
-            BREAK
-        END
-        Press Keys  ${None}  ARROW_UP  
-    END
-
-    Wait and Input Text                        ${booking.FIRST_NAME_2}            Pedro
-    Wait and Input Text                        ${booking.LAST_NAME_2}             Alvarez
+    # Wait Until Element Is Visible             ${booking.BTN_PSG_SRVC}
+    Press Keys   ${NONE}                       TAB
+    Wait and Click Element                     ${booking.VIAJANTE_2}
+    Wait and Input Text                        ${booking.FIRST_NAME_2}            Bia
+    Wait and Input Text                        ${booking.LAST_NAME_2}             Teste
+    Press Keys   ${NONE}                       TAB
+    Wait and Click Element                     ${booking.SLC_NACIONALIDADE_2}
+    Wait and Input Text                        ${booking.CAMPO_CPF_2}        72602404667
+    # Wait and Input Text                        ${booking.CAMPO_DATA_NASC_2}    05/02/2000
+    Wait Until Page Does Not Contain           Buscando TudoAzul            20
+    Press Keys   ${NONE}                       TAB
+    Wait and Click Element                     ${booking.SLC_SEXO_2}
+    # Capture Page Screenshot
     
     WHILE  True
-        ${status}  Run keyword and return status   Click Element   ${booking.SLC_NACIONALIDADE}
-        IF   ${status}
-            BREAK
-        END
-        Press Keys  ${None}  ARROW_DOWN 
-    END
-    Wait and Click Element                     ${booking.SLC_NACIONALIDADE_2}
-    Wait and Input Text                        ${booking.CAMPO_CPF_2}        12232417344
-    Wait and Input Text                        ${booking.CAMPO_DATA_NASC_2}    05/02/2000
-    Wait and Click Element                     ${booking.SLC_SEXO_2}
-
-
-    WHILE  True
-        ${status}  Run keyword and return status   Click Element   ${booking.VIAJANTE_3}
+        ${status}  Run keyword and return status   Wait Until Element is Visible  ${booking.BTN_PSG_SRVC} 
         IF   ${status}
             BREAK
         END
         Press Keys  ${None}  ARROW_UP  
     END
 
-    Wait and Input Text                        ${booking.FIRST_NAME_3}            Gabriela
-    Wait and Input Text                        ${booking.LAST_NAME_3}             Mendes
-    Wait and Click Element                     ${booking.SLC_NACIONALIDADE_3}
+    # Scroll Element Into View                   ${booking.BTN_PSG_SRVC}
+    Wait and Input Text                        ${booking.FIRST_NAME_3}            Paulo
+    Wait and Input Text                        ${booking.LAST_NAME_3}             Teste
+    Press Keys   ${NONE}                       TAB
+    Click Element                              ${booking.SLC_NACIONALIDADE_3}
     Wait and Input Text                        ${booking.CAMPO_CPF_3}        42177470803
-    Wait and Input Text                        ${booking.CAMPO_DATA_NASC_3}    05/05/2000
+    Wait Until Page Does Not Contain           Buscando TudoAzul            20
+    Wait and Input Text                        ${booking.CAMPO_DATA_NASC_3}    05/05/2018
+    Capture Page Screenshot
+    Scroll Element Into View                   ${booking.BTN_PSG_SRVC}
+    Press Keys   ${NONE}                       TAB
+    # Click Element                              ${booking.CAMPO_SEXO_3}
     Wait and Click Element                     ${booking.SLC_SEXO_3}
+
+   #WHILE  True
+   #    ${status}  Run keyword and return status   Click Element   ${booking.CAMPO_SEXO_3}   
+   #    IF   ${status}
+   #        BREAK
+   #    END
+   #    Press Keys  ${None}  ARROW_DOWN 
+   #END
+   #Wait and Click Element                     ${booking.SLC_SEXO_3}
 
 
     # Wait Until Element Is Visible             ${selecaopassagens.VLD_MODAL_PGTO}     40

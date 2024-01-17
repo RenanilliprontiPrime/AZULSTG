@@ -26,20 +26,30 @@ Resource    ../../../resource/main.robot
 
 # viajantes
 ...        VIAJANTE_2=(//span[text()='Nome do Viajante'])[1]
+...        VIAJANTE_3=(//div[@class='passenger'])[3]
+
 ...        FIRST_NAME_2=(//input[@aria-label='Informe o nome'])[2]
+...        FIRST_NAME_3=(//input[@aria-label='Informe o nome'])[3]
+
 ...        LAST_NAME_2=(//input[@aria-label='Informe o sobrenome'])[2]
-...        NACIONALIDADE=(//span[text()='Nacionalidade'])[2]
+...        LAST_NAME_3=(//input[@aria-label='Informe o sobrenome'])[3]
+
+...        NACIONALIDADE_2=(//div[text()='Selecione'])[1]
+...        NACIONALIDADE_3=(//div[text()='Selecione'])[2]
+
 ...        SLC_NACIONALIDADE_2=(//div[text()='Brasil'])[2]
-...        CAMPO_CPF_2=(//input[@aria-label='Informe o CPF ou tudo azul'])[1]
-...        CAMPO_DATA_NASC_2=(//span[text()='Data de nascimento'])[2]
-...        CAMPO_SEXO_2=(//span[text()='Sexo'])[2]
-...        SLC_SEXO_2=(//div[text()='Masculino'])[2]
-...        VIAJANTE_3=(//span[text()='Nome do Viajante'])[2]        
-...        FIRST_NAME_3=(//span[text()='Primeiro Nome'])[3]
-...        LAST_NAME_3=(//span[text()='Último sobrenome'])[3]
-...        NACIONALIDADE=(//span[text()='Nacionalidade'])[3]
 ...        SLC_NACIONALIDADE_3=(//div[text()='Brasil'])[3]
-...        CAMPO_CPF_3=(//span[text()='CPF ou Nº Tudo'])[2]
-...        CAMPO_DATA_NASC_3=(//span[text()='Data de nascimento'])[3]
-...        CAMPO_SEXO_3=(//span[text()='Sexo'])[3]
-...        SLC_SEXO_3=//div[text()='Feminino']
+
+...        CAMPO_CPF_2=(//input[@aria-label='Informe o CPF ou tudo azul'])[1]
+...        CAMPO_CPF_3=(//input[@aria-label='Informe o CPF ou tudo azul'])[2]
+
+...        CAMPO_DATA_NASC_2=(//input[@aria-label='Informe a data de nascimento'])[2]
+...        CAMPO_DATA_NASC_3=(//input[@aria-label='Informe a data de nascimento'])[3]
+
+...        CAMPO_SEXO_2=(//div[text()='Selecione'])[1]
+...        CAMPO_SEXO_3=(//*[contains(text(),'Sexo')])[3]
+
+...        SLC_SEXO_2=//div[text()='Feminino']
+...        SLC_SEXO_3=(//div[text()='Masculino'])[2]
+
+...        BTN_PSG_SRVC=(//div[text()='Prosseguir para serviços'])[1]

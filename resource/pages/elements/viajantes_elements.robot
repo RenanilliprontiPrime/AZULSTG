@@ -10,3 +10,4 @@ Resource    ../../../resource/main.robot
 ...        BTN_PSG_PGTO_VIAJANTES=(//div[text()='Prosseguir para pagamento'])[1]
 
 
+
