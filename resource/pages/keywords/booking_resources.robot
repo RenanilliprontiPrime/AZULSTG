@@ -26,8 +26,8 @@ que o cliente esteja com o destino de voo selecionado, data, forma de pagamento 
     Wait and Click Element                    ${selecaovoos.SALGADO_FILHO}  
     
     # Capture Page Screenshot
-    Wait and Input Text                       ${selecaovoos.DESTINO}            Santos Dumont        10
-    Wait and Click Element                    ${selecaovoos.SANTOS_DUMONT} 
+    Wait and Input Text                       ${selecaovoos.DESTINO}            Campinas        10
+    Wait and Click Element                    ${selecaovoos.VCP} 
     
 
 # inserir data ida
@@ -73,14 +73,18 @@ selecionar a passagem desejada escolhendo a tarifa "Azul", clicar em "Informar v
     Wait Until Page Does Not Contain           Carregando informações                      40
     Wait and Click Element                     ${selecaopassagens.BTN_INF_VIAJANTES}       30
     Wait Until Page Does Not Contain           Carregando informações                      40
-
     # Wait Until Element Is Visible             ${booking.BTN_PSG_SRVC}
+    # @{ages}        Create List        ADT    ADT    CHD
+    # Informar dados dos passageiros  3  True  ${ages}
+    Wait Until Page Does Not Contain           Falta pouco. Agora, você só vai precisar preencher os dados dos viajantes.        30
     Press Keys   ${NONE}                       TAB
     Wait and Click Element                     ${booking.VIAJANTE_2}
     Wait and Input Text                        ${booking.FIRST_NAME_2}            Bia
     Wait and Input Text                        ${booking.LAST_NAME_2}             Teste
-    Press Keys   ${NONE}                       TAB
-    Wait and Click Element                     ${booking.SLC_NACIONALIDADE_2}
+    # FOR  ${i}  IN RANGE  2  4
+	# Click Element   (//label[contains(@for, 'passengerNationality')])[${i}]
+	# Click Element   (//div[contains(text(),'Brasil')])[${i}]
+    # END
     Wait and Input Text                        ${booking.CAMPO_CPF_2}        72602404667
     # Wait and Input Text                        ${booking.CAMPO_DATA_NASC_2}    05/02/2000
     Wait Until Page Does Not Contain           Buscando TudoAzul            20
@@ -88,36 +92,73 @@ selecionar a passagem desejada escolhendo a tarifa "Azul", clicar em "Informar v
     Wait and Click Element                     ${booking.SLC_SEXO_2}
     # Capture Page Screenshot
     
-    WHILE  True
-        ${status}  Run keyword and return status   Wait Until Element is Visible  ${booking.BTN_PSG_SRVC} 
-        IF   ${status}
-            BREAK
-        END
-        Press Keys  ${None}  ARROW_UP  
-    END
+    # WHILE  True
+    #     ${status}  Run keyword and return status   Wait Until Element is Visible  ${booking.BTN_PSG_SRVC} 
+    #     IF   ${status}
+    #         BREAK
+    #     END
+    #     Press Keys  ${None}  ARROW_DOWN  
+    # END
 
     # Scroll Element Into View                   ${booking.BTN_PSG_SRVC}
     Wait and Input Text                        ${booking.FIRST_NAME_3}            Paulo
     Wait and Input Text                        ${booking.LAST_NAME_3}             Teste
-    Press Keys   ${NONE}                       TAB
-    Click Element                              ${booking.SLC_NACIONALIDADE_3}
+    # Scroll Element Into View                   ${booking.BTN_PSG_SRVC}
+    # Press Keys   ${NONE}                       TAB
+    # Wait and Click Element                     ${booking.SLC_NACIONALIDADE_3}
+    WHILE  False
+        ${status}  Run keyword and return status   Click Element  ${booking.NACIONALIDADE_3} 
+        IF   ${status}
+            BREAK
+        END
+        Press Keys  ${None}  ARROW_DOWN
+    END
+    Wait and Click Element                     ${booking.SLC_NACIONALIDADE_3}
+
     Wait and Input Text                        ${booking.CAMPO_CPF_3}        42177470803
     Wait Until Page Does Not Contain           Buscando TudoAzul            20
     Wait and Input Text                        ${booking.CAMPO_DATA_NASC_3}    05/05/2018
     Capture Page Screenshot
-    Scroll Element Into View                   ${booking.BTN_PSG_SRVC}
+    Scroll Element Into View                   ${booking.SLC_SEXO_3}
     Press Keys   ${NONE}                       TAB
     # Click Element                              ${booking.CAMPO_SEXO_3}
     Wait and Click Element                     ${booking.SLC_SEXO_3}
 
-   #WHILE  True
-   #    ${status}  Run keyword and return status   Click Element   ${booking.CAMPO_SEXO_3}   
-   #    IF   ${status}
-   #        BREAK
-   #    END
-   #    Press Keys  ${None}  ARROW_DOWN 
-   #END
-   #Wait and Click Element                     ${booking.SLC_SEXO_3}
+    Wait and Click Element                     ${booking.BTN_PSG_SRVC}
+    Wait Until Page Does Not Contain           Salvando informações        40
+
+
+# Informar dados dos passageiros
+# 	[Arguments]  ${n}  ${loged}  @{ages}
+# 	IF  ${loged}
+# 		${start}  Set Variable  2
+# 	ELSE IF
+# 		${start}  Set Variable  1
+# 	END
+# 	FOR  ${i}  IN RANGE  ${start}  ${n}+1
+# 		Scroll Element Into View  (//label[contains(@for, 'passengerGender')])[${i}]
+# 		${name}       Faker.Name
+# 		${lastName}   Faker.LastName
+# 		${cpf}        Generate Random String  11  [NUMBERS]
+# 		IF  "${ages}[${i}}"=="ADT"
+# 			${birthday}   FakerLibrary.date_of_birth  minimum_age=12  maximum_age=100
+# 		ELSE IF  "${ages}[${i}}"=="CHD"
+# 			${birthday}   FakerLibrary.date_of_birth  minimum_age=2  maximum_age=11
+# 		ELSE IF  "${ages}[${i}}"=="INF"
+# 			${birthday}   FakerLibrary.date_of_birth  minimum_age=0  maximum_age=2
+# 		END
+# 		${birthday}   FakerLibrary.date_of_birth  minimum_age=14  maximum_age=17
+# 		Input Text      textbox_name=(//input[contains(@id, 'firstName')])[${i}]  ${name}
+# 		Input Text      (//input[contains(@id, 'lastName')])[${i}]   ${lastName}
+# 		Click Element   (//label[contains(@for, 'passengerNationality')])[${i}]
+# 		Click Element   (//div[contains(text(),'Brasil')])[${i}]
+# 		Input Text      (//input[contains(@id, 'cpf')])[${i}]    ${cpf}
+# 		Input Text      (//input[contains(@id, 'passengerBirthDate')])[${i}]  ${birthday}
+# 		Click Element   (//label[contains(@for, 'passengerGender')])[${i}]
+# 		Click Element   (//div[contains(text(), 'Masculino')])[${i}]
+# 	END
+    # (//input[contains(@id, 'firstName')])
+    # textbox_name=(//input[contains(@id, 'firstName')])
 
 
     # Wait Until Element Is Visible             ${selecaopassagens.VLD_MODAL_PGTO}     40

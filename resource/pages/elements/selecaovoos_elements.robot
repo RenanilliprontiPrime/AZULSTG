@@ -14,7 +14,7 @@ Resource    ../../../resource/main.robot
 ...        SALGADO_FILHO=//b[text()='Salgado Filho']
 ...        DESTINO=//input[contains(@placeholder,'Digite o seu destino')]
 ...        BSB=//b[contains(.,'Brasília')]
-...        SANTOS_DUMONT=(//b[text()='Santos Dumont'])[1]
+# ...        CAMPINAS=(//b[text()='Santos Dumont'])[1]
 ...        DATA=//label[@aria-label='Datas (ida e volta)'][contains(.,'Datas (ida e volta)')]
 ...        DATA_DE_IDA=//input[contains(@name,'startDate')]
 ...        DATA_DE_VOLTA=//input[contains(@name,'endDate')]
